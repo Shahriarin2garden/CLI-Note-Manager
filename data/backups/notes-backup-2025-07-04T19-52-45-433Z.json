@@ -1,0 +1,118 @@
+[
+  {
+    "id": 1751483669714,
+    "title": "My First Note",
+    "body": "This is a test note to demonstrate the CLI functionality",
+    "createdAt": "2025-07-02T19:14:29.714Z",
+    "updatedAt": "2025-07-02T19:14:29.715Z"
+  },
+  {
+    "id": 1751658726611,
+    "title": "Project Planning Meeting",
+    "body": "We discussed the upcoming project timeline, assigned team roles, and identified key milestones. The project should be completed by December. John will handle the frontend, Sarah will work on the backend, and Mike will manage the database. We need to schedule weekly check-ins to track progress.",
+    "createdAt": "2025-07-04T19:52:06.611Z",
+    "updatedAt": "2025-07-04T19:52:06.613Z",
+    "tags": [
+      "mike",
+      "sarah",
+      "john",
+      "team roles,",
+      "key"
+    ],
+    "category": "Work",
+    "metadata": {
+      "sentiment": {
+        "score": 2,
+        "comparative": 0.043478260869565216,
+        "mood": "positive",
+        "positive": [
+          "progress"
+        ],
+        "negative": [],
+        "tokens": 46
+      },
+      "topics": {
+        "people": [
+          "John",
+          "Sarah",
+          "Mike"
+        ],
+        "places": [],
+        "organizations": [],
+        "topics": [
+          "Mike",
+          "Sarah",
+          "John"
+        ],
+        "nouns": [
+          "We",
+          "the upcoming project timeline,",
+          "team roles,",
+          "key",
+          "The project",
+          "December.",
+          "John",
+          "the frontend,",
+          "Sarah",
+          "Mike"
+        ],
+        "verbs": [
+          "discussed",
+          "assigned",
+          "identified",
+          "milestones.",
+          "should be completed",
+          "will handle",
+          "will work",
+          "backend,",
+          "will manage",
+          "need"
+        ]
+      },
+      "summary": "We discussed the upcoming project timeline, assigned team roles, and identified key milestones...",
+      "wordCount": 46,
+      "readingTime": 1
+    }
+  },
+  {
+    "id": 1751658752281,
+    "title": "Quick Note 7/5/2025, 1:52:32 AM",
+    "body": "Remember to follow up with the client about the proposal feedback. Also need to prepare presentation slides for next Tuesday's demo.",
+    "createdAt": "2025-07-04T19:52:32.281Z",
+    "updatedAt": "2025-07-04T19:52:32.282Z",
+    "tags": [
+      "quick-note"
+    ],
+    "category": "Quick Notes",
+    "metadata": {
+      "sentiment": {
+        "score": 0,
+        "comparative": 0,
+        "mood": "neutral",
+        "positive": [],
+        "negative": [],
+        "tokens": 21
+      },
+      "topics": {
+        "people": [],
+        "places": [],
+        "organizations": [],
+        "topics": [],
+        "nouns": [
+          "the client",
+          "the proposal feedback.",
+          "presentation slides",
+          "next Tuesday's demo."
+        ],
+        "verbs": [
+          "Remember",
+          "follow up",
+          "Also need",
+          "prepare"
+        ]
+      },
+      "wordCount": 21,
+      "readingTime": 1
+    }
+  }
+]

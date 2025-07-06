@@ -400,41 +400,5 @@
       "wordCount": 8,
       "readingTime": 1
     }
-  },
-  {
-    "id": 1751666212642,
-    "title": "Professional Test",
-    "body": "Testing the cleaned up professional interface",
-    "createdAt": "2025-07-04T21:56:52.642Z",
-    "updatedAt": "2025-07-04T21:56:52.643Z",
-    "tags": [
-      "neutral",
-      "short"
-    ],
-    "category": "General",
-    "metadata": {
-      "sentiment": {
-        "score": 0,
-        "comparative": 0,
-        "mood": "neutral",
-        "positive": [],
-        "negative": [],
-        "tokens": 6
-      },
-      "topics": {
-        "people": [],
-        "places": [],
-        "organizations": [],
-        "topics": [],
-        "nouns": [
-          "the cleaned up professional interface"
-        ],
-        "verbs": [
-          "Testing"
-        ]
-      },
-      "wordCount": 6,
-      "readingTime": 1
-    }
   }
 ]

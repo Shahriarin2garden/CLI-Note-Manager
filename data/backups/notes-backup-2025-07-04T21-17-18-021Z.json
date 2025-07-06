@@ -1,0 +1,195 @@
+[
+  {
+    "id": 1751483669714,
+    "title": "My First Note",
+    "body": "This is a test note to demonstrate the CLI functionality",
+    "createdAt": "2025-07-02T19:14:29.714Z",
+    "updatedAt": "2025-07-02T19:14:29.715Z"
+  },
+  {
+    "id": 1751658726611,
+    "title": "Project Planning Meeting",
+    "body": "We discussed the upcoming project timeline, assigned team roles, and identified key milestones. The project should be completed by December. John will handle the frontend, Sarah will work on the backend, and Mike will manage the database. We need to schedule weekly check-ins to track progress.",
+    "createdAt": "2025-07-04T19:52:06.611Z",
+    "updatedAt": "2025-07-04T19:52:06.613Z",
+    "tags": [
+      "mike",
+      "sarah",
+      "john",
+      "team roles,",
+      "key"
+    ],
+    "category": "Work",
+    "metadata": {
+      "sentiment": {
+        "score": 2,
+        "comparative": 0.043478260869565216,
+        "mood": "positive",
+        "positive": [
+          "progress"
+        ],
+        "negative": [],
+        "tokens": 46
+      },
+      "topics": {
+        "people": [
+          "John",
+          "Sarah",
+          "Mike"
+        ],
+        "places": [],
+        "organizations": [],
+        "topics": [
+          "Mike",
+          "Sarah",
+          "John"
+        ],
+        "nouns": [
+          "We",
+          "the upcoming project timeline,",
+          "team roles,",
+          "key",
+          "The project",
+          "December.",
+          "John",
+          "the frontend,",
+          "Sarah",
+          "Mike"
+        ],
+        "verbs": [
+          "discussed",
+          "assigned",
+          "identified",
+          "milestones.",
+          "should be completed",
+          "will handle",
+          "will work",
+          "backend,",
+          "will manage",
+          "need"
+        ]
+      },
+      "summary": "We discussed the upcoming project timeline, assigned team roles, and identified key milestones...",
+      "wordCount": 46,
+      "readingTime": 1
+    }
+  },
+  {
+    "id": 1751658752281,
+    "title": "Quick Note 7/5/2025, 1:52:32 AM",
+    "body": "Remember to follow up with the client about the proposal feedback. Also need to prepare presentation slides for next Tuesday's demo.",
+    "createdAt": "2025-07-04T19:52:32.281Z",
+    "updatedAt": "2025-07-04T19:52:32.282Z",
+    "tags": [
+      "quick-note"
+    ],
+    "category": "Quick Notes",
+    "metadata": {
+      "sentiment": {
+        "score": 0,
+        "comparative": 0,
+        "mood": "neutral",
+        "positive": [],
+        "negative": [],
+        "tokens": 21
+      },
+      "topics": {
+        "people": [],
+        "places": [],
+        "organizations": [],
+        "topics": [],
+        "nouns": [
+          "the client",
+          "the proposal feedback.",
+          "presentation slides",
+          "next Tuesday's demo."
+        ],
+        "verbs": [
+          "Remember",
+          "follow up",
+          "Also need",
+          "prepare"
+        ]
+      },
+      "wordCount": 21,
+      "readingTime": 1
+    }
+  },
+  {
+    "id": 1751658765369,
+    "title": "Daily Journal - Sat Jul 05 2025",
+    "body": "## Daily Reflection\n\n### What went well:\n\n### What could improve:\n\n### Tomorrow's goals:",
+    "createdAt": "2025-07-04T19:52:45.369Z",
+    "updatedAt": "2025-07-04T19:52:45.369Z",
+    "tags": [],
+    "category": "Journal",
+    "metadata": {
+      "sentiment": {
+        "score": 2,
+        "comparative": 0.2,
+        "mood": "positive",
+        "positive": [
+          "improve"
+        ],
+        "negative": [],
+        "tokens": 10
+      },
+      "topics": {
+        "people": [],
+        "places": [],
+        "organizations": [],
+        "topics": [],
+        "nouns": [
+          "## Daily Reflection",
+          "### What",
+          "### What",
+          "### Tomorrow's goals:"
+        ],
+        "verbs": [
+          "went well:",
+          "could improve:"
+        ]
+      },
+      "wordCount": 11,
+      "readingTime": 1
+    }
+  },
+  {
+    "id": 1751662661266,
+    "title": "Quick Note 7/5/2025, 2:57:41 AM",
+    "body": "Testing the enhanced AI-powered note system with comprehensive features and analytics",
+    "createdAt": "2025-07-04T20:57:41.266Z",
+    "updatedAt": "2025-07-04T20:57:41.266Z",
+    "tags": [
+      "quick-note"
+    ],
+    "category": "Quick Notes",
+    "metadata": {
+      "sentiment": {
+        "score": 2,
+        "comparative": 0.18181818181818182,
+        "mood": "positive",
+        "positive": [
+          "comprehensive"
+        ],
+        "negative": [],
+        "tokens": 11
+      },
+      "topics": {
+        "people": [],
+        "places": [],
+        "organizations": [],
+        "topics": [],
+        "nouns": [
+          "note system",
+          "comprehensive features and analytics"
+        ],
+        "verbs": [
+          "Testing"
+        ]
+      },
+      "wordCount": 11,
+      "readingTime": 1
+    }
+  }
+]

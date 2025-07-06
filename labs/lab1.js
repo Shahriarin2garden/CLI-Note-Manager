@@ -2,7 +2,7 @@
 
 import chalk from 'chalk';
 
-console.log(chalk.blue.bold('🚀 Lab 1: JavaScript Fundamentals & Node.js Basics\n'));
+console.log(chalk.blue.bold('Lab 1: JavaScript Fundamentals & Node.js Basics\n'));
 
 // Node.js Basics
 console.log(chalk.cyan.bold('=== Node.js Environment Information ==='));
@@ -10,7 +10,7 @@ console.log(chalk.green(`Node.js Version: ${process.version}`));
 console.log(chalk.green(`Platform: ${process.platform}`));
 console.log(chalk.green(`Architecture: ${process.arch}`));
 console.log(chalk.green(`Process ID: ${process.pid}`));
-console.log(chalk.yellow('💡 Tip: You can explore the Node.js REPL by running "node" in your terminal\n'));
+console.log(chalk.yellow('Tip: You can explore the Node.js REPL by running "node" in your terminal\n'));
 
 // Closures Demo
 console.log(chalk.cyan.bold('=== Closures & Higher-Order Functions ==='));
@@ -73,7 +73,7 @@ function withLogging(fn) {
       return result;
     } catch (error) {
       const endTime = Date.now();
-      console.log(chalk.red(`❌ Function failed after ${endTime - startTime}ms: ${error.message}`));
+      console.log(chalk.red(`Function failed after ${endTime - startTime}ms: ${error.message}`));
       throw error;
     }
   };
@@ -201,25 +201,36 @@ const testNote1 = strictValidator('Hi', 'Short note');
 const testNote2 = lenientValidator('Hi', 'Short note');
 const testNote3 = strictValidator('My Important Meeting Notes', 'Today we discussed the quarterly budget and decided to increase spending on development tools.');
 
-console.log(chalk.white(`Strict validation - Short note: ${testNote1.isValid ? '✅ Valid' : '❌ Invalid'}`));
+console.log(chalk.white(`Strict validation - Short note: ${testNote1.isValid ? 'Valid' : 'Invalid'}`));
 if (!testNote1.isValid) {
   testNote1.errors.forEach(error => console.log(chalk.red(`  - ${error}`)));
 }
 
-console.log(chalk.white(`Lenient validation - Short note: ${testNote2.isValid ? '✅ Valid' : '❌ Invalid'}`));
+console.log(chalk.white(`Lenient validation - Short note: ${testNote2.isValid ? 'Valid' : 'Invalid'}`));
 
-console.log(chalk.white(`Strict validation - Long note: ${testNote3.isValid ? '✅ Valid' : '❌ Invalid'}`));
+console.log(chalk.white(`Strict validation - Long note: ${testNote3.isValid ? 'Valid' : 'Invalid'}`));
 
-console.log(chalk.green.bold('\n🎉 Lab 1 exercises completed successfully!'));
-console.log(chalk.cyan('\n💡 Key Concepts Demonstrated:'));
+console.log(chalk.green.bold('\nLab 1 exercises completed successfully!'));
+console.log(chalk.cyan('\nKey Concepts Demonstrated:'));
 console.log(chalk.white('  • Closures: Functions that capture variables from their outer scope'));
 console.log(chalk.white('  • Higher-order functions: Functions that take or return other functions'));
 console.log(chalk.white('  • Function composition: Combining simple functions to build complex operations'));
 console.log(chalk.white('  • Factory patterns: Using closures to create specialized functions'));
 console.log(chalk.white('  • Node.js environment: Accessing process information and understanding the runtime'));
 
-console.log(chalk.yellow('\n🚀 Next Steps:'));
+console.log(chalk.yellow('\nNext Steps:'));
 console.log(chalk.white('  • Try the note manager: npm start'));
 console.log(chalk.white('  • Add some notes: npm start add "My Title" "My note content"'));
 console.log(chalk.white('  • Explore the Node.js REPL: node'));
 console.log(chalk.white('  • Read about closures: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures'));
+
+// Export function for use in main CLI
+export async function runLab1() {
+  // Lab code is executed when this module is imported
+  console.log(chalk.green('\n✅ Lab 1 execution complete!'));
+}
+
+// Run if called directly
+if (import.meta.url === `file://${process.argv[1]}`) {
+  runLab1();
+}
