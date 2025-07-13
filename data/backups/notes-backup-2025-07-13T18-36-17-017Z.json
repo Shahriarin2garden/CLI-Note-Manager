@@ -542,44 +542,5 @@
       "wordCount": 11,
       "readingTime": 1
     }
-  },
-  {
-    "id": 1752431776918,
-    "title": "Sample Note",
-    "body": "This is a sample note for documentation",
-    "createdAt": "2025-07-13T18:36:16.918Z",
-    "updatedAt": "2025-07-13T18:36:16.919Z",
-    "tags": [
-      "a sample note",
-      "documentation",
-      "neutral",
-      "short"
-    ],
-    "category": "General",
-    "metadata": {
-      "sentiment": {
-        "score": 0,
-        "comparative": 0,
-        "mood": "neutral",
-        "positive": [],
-        "negative": [],
-        "tokens": 7
-      },
-      "topics": {
-        "people": [],
-        "places": [],
-        "organizations": [],
-        "topics": [],
-        "nouns": [
-          "a sample note",
-          "documentation"
-        ],
-        "verbs": [
-          "is"
-        ]
-      },
-      "wordCount": 7,
-      "readingTime": 1
-    }
   }
 ]
