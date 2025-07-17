@@ -3,7 +3,11 @@
 
 > **Navigation**: [← Main Guide](./EDUCATIONAL_GUIDE.md) | [Next: Advanced →](./EDUCATIONAL_GUIDE_ADVANCED.md) | [Verify Learning →](./EDUCATIONAL_REQUIREMENTS.md)
 
+> **🎯 Hands-On Practice**: [Lab 1: Fundamentals](./docs/LAB1_FUNDAMENTALS.md) | Run `npm start lab1`
+
 This concise guide covers the core JavaScript and Node.js concepts you need to build professional CLI applications. Each topic includes theory, practical examples, and real output.
+
+**💡 Study Method**: Read this guide first, then complete [Lab 1](./docs/LAB1_FUNDAMENTALS.md) for hands-on practice with the concepts!
 
 ## Learning Objectives
 
@@ -720,14 +724,24 @@ You've learned the essential JavaScript and Node.js concepts:
 
 ## Next Steps
 
+### **Hands-On Practice** (Recommended)
+- **[Lab 1: Fundamentals](./docs/LAB1_FUNDAMENTALS.md)** - Practice JavaScript concepts you just learned
+- Run `npm start lab1` or `node labs/lab1.js` for interactive exercises
+- Run `node labs/fundamentals.js` for comprehensive fundamentals course
+
 ### **Continue Learning**
+- **[Lab 2: Core Modules](./docs/LAB2_CORE_MODULES.md)** - File system and Node.js modules
 - **[Advanced Guide](./EDUCATIONAL_GUIDE_ADVANCED.md)** - Professional patterns and AI integration
 - [✓] **[Verify Learning](./EDUCATIONAL_REQUIREMENTS.md)** - Check your progress
 - **[Back to Main Guide](./EDUCATIONAL_GUIDE.md)** - Overview and navigation
 
 ### **Practice Commands**
 ```bash
-# Test the full CLI application
+# Complete the labs first
+npm start lab1     # JavaScript fundamentals practice
+npm start lab2     # Core modules and file system
+
+# Then test the full CLI application
 npm start add "First Note" "Learning Node.js fundamentals"
 npm start list
 npm start analytics

@@ -1,5 +1,9 @@
 # Lab 2: Node.js Core Modules & File System Operations
 
+**📍 Navigation**: [← Main Guide](../EDUCATIONAL_GUIDE.md) | [← Lab 1](./LAB1_FUNDAMENTALS.md) | [Advanced Guide →](../EDUCATIONAL_GUIDE_ADVANCED.md)
+
+**🎯 Lab Files**: `labs/lab2.js` (if available) | Related: `utils/fileHandler.js` | `utils/advancedFileHandler.js`
+
 ## Learning Objectives
 
 ### Node.js Project Structure
@@ -27,7 +31,7 @@
 
 ## Practical Tasks
 
-### ✅ Task 1: Create a Node.js Project
+### [✓] Task 1: Create a Node.js Project
 ```bash
 # Initialize new project
 npm init -y
@@ -39,7 +43,7 @@ npm install chalk dotenv
 # Add "type": "module" to package.json
 ```
 
-### ✅ Task 2: Build a File Manager CLI Tool
+### [✓] Task 2: Build a File Manager CLI Tool
 ```javascript
 // Basic file operations
 import fs from 'fs';
@@ -65,7 +69,7 @@ const fileManager = {
 };
 ```
 
-### ✅ Task 3: JSON Configuration Management
+### [✓] Task 3: JSON Configuration Management
 ```javascript
 // config.json
 {
@@ -101,7 +105,7 @@ export class ConfigManager {
 }
 ```
 
-### ✅ Task 4: Cross-Platform Path Handling
+### [✓] Task 4: Cross-Platform Path Handling
 ```javascript
 import path from 'path';
 import os from 'os';
@@ -189,29 +193,29 @@ When you run `npm start lab2`, you should see:
 Lab 2: Node.js Core Modules & File System Operations
 
 === Project Setup ===
-✅ package.json configured
-✅ ES modules enabled
-✅ Dependencies installed
+[✓] package.json configured
+[✓] ES modules enabled
+[✓] Dependencies installed
 
 === File System Operations ===
 Creating test files...
-✅ Created: data/sample.txt
-✅ Created: data/config.json
+[✓] Created: data/sample.txt
+[✓] Created: data/config.json
 Reading files...
-📄 sample.txt content: "This is a sample file for Lab 2"
-📄 config.json content: {"name": "File Manager", "version": "1.0.0"}
+[INFO] sample.txt content: "This is a sample file for Lab 2"
+[INFO] config.json content: {"name": "File Manager", "version": "1.0.0"}
 
 === Directory Operations ===
-📁 Current directory: /path/to/project
-📁 Files in data/: ["sample.txt", "config.json"]
-📁 Creating subdirectory: data/backups
-✅ Directory created successfully
+[DIR] Current directory: /path/to/project
+[DIR] Files in data/: ["sample.txt", "config.json"]
+[DIR] Creating subdirectory: data/backups
+[✓] Directory created successfully
 
 === Cross-Platform Path Handling ===
-🖥️  Platform: win32
-🏠 Home directory: C:\Users\username
-📂 Data path: C:\path\to\project\data
-📁 Config path: C:\path\to\project\data\config.json
+[SYSTEM] Platform: win32
+[SYSTEM] Home directory: C:\Users\username
+[PATH] Data path: C:\path\to\project\data
+[PATH] Config path: C:\path\to\project\data\config.json
 ```
 
 ## Practical Examples
@@ -240,26 +244,26 @@ class FileManager {
     async createFile(filename, content) {
         const filePath = path.join(this.baseDir, filename);
         await fs.writeFile(filePath, content);
-        console.log(chalk.green(`✅ Created: ${filename}`));
+        console.log(chalk.green(`[✓] Created: ${filename}`));
     }
     
     async readFile(filename) {
         const filePath = path.join(this.baseDir, filename);
         const content = await fs.readFile(filePath, 'utf8');
-        console.log(chalk.blue(`📄 ${filename}:`), content);
+        console.log(chalk.blue(`[INFO] ${filename}:`), content);
         return content;
     }
     
     async listFiles() {
         const files = await fs.readdir(this.baseDir);
-        console.log(chalk.yellow('📁 Files:'), files);
+        console.log(chalk.yellow('[FILES]'), files);
         return files;
     }
     
     async deleteFile(filename) {
         const filePath = path.join(this.baseDir, filename);
         await fs.unlink(filePath);
-        console.log(chalk.red(`🗑️  Deleted: ${filename}`));
+        console.log(chalk.red(`[DELETED] ${filename}`));
     }
 }
 
@@ -318,9 +322,15 @@ export const config = {
 ## Next Steps
 
 After completing Lab 2, you'll be ready for:
+- **[Advanced Guide](../EDUCATIONAL_GUIDE_ADVANCED.md)**: Async patterns, CLI development, AI integration
 - **Lab 3**: Asynchronous Programming & Promises
 - **Lab 4**: Building CLI Applications
 - **Lab 5**: Error Handling & Debugging
+
+**Continue Your Journey**:
+1. Review [Advanced Concepts](../EDUCATIONAL_GUIDE_ADVANCED.md)
+2. Explore real implementations in `utils/fileHandler.js`
+3. Check your progress with [Educational Requirements](../EDUCATIONAL_REQUIREMENTS.md)
 
 ## Practice Exercises
 

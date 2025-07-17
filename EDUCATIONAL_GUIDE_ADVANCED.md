@@ -9,8 +9,16 @@ This guide bridges the gap between the fundamentals and professional development
 
 **Before starting this guide, you should understand:**
 - [✓] JavaScript functions, scope, and closures → [Learn in Basics Guide](./EDUCATIONAL_GUIDE_BASICS.md)
+- [✓] Hands-on practice with fundamentals → [Complete Lab 1](./docs/LAB1_FUNDAMENTALS.md)
 - [✓] Node.js runtime and event-driven programming
+- [✓] File system operations → [Complete Lab 2](./docs/LAB2_CORE_MODULES.md)
 - [✓] Basic CLI development concepts
+
+**📚 Recommended Preparation**:
+1. Complete [EDUCATIONAL_GUIDE_BASICS.md](./EDUCATIONAL_GUIDE_BASICS.md)
+2. Practice with [Lab 1: Fundamentals](./docs/LAB1_FUNDAMENTALS.md)
+3. Master [Lab 2: Core Modules](./docs/LAB2_CORE_MODULES.md)
+4. Then proceed with this advanced guide
 
 ## Learning Path
 

@@ -2,9 +2,18 @@
 
 > **Navigation**: [← Main Guide](./EDUCATIONAL_GUIDE.md) | [← Basics](./EDUCATIONAL_GUIDE_BASICS.md) | [← Advanced](./EDUCATIONAL_GUIDE_ADVANCED.md)
 
+> **🎯 Learning Resources**: [Lab 1](./docs/LAB1_FUNDAMENTALS.md) | [Lab 2](./docs/LAB2_CORE_MODULES.md) | `labs/` folder
+
 This document validates that the TeleMed Notes project fully meets all educational requirements for JavaScript and Node.js fundamentals.
 
 ## Assessment Overview
+
+**Complete this checklist to verify your learning:**
+- [✓] **Theory**: Read [EDUCATIONAL_GUIDE_BASICS.md](./EDUCATIONAL_GUIDE_BASICS.md)  
+- [✓] **Practice**: Complete [Lab 1: Fundamentals](./docs/LAB1_FUNDAMENTALS.md)
+- [✓] **Hands-On**: Run `npm start lab1` and `node labs/lab1.js`
+- [✓] **Core Modules**: Complete [Lab 2: Core Modules](./docs/LAB2_CORE_MODULES.md)
+- [✓] **Advanced**: Review [EDUCATIONAL_GUIDE_ADVANCED.md](./EDUCATIONAL_GUIDE_ADVANCED.md)
 
 This verification ensures you've mastered:
 - [✓] **Core JavaScript**: Functions, scope, closures, objects, arrays  
@@ -216,11 +225,34 @@ npm run learn
 
 ### Learning Verification Checklist
 
-- [ ] **Completed** [Basics Guide](./EDUCATIONAL_GUIDE_BASICS.md)
-- [ ] **Completed** [Advanced Guide](./EDUCATIONAL_GUIDE_ADVANCED.md)  
+**Theory Foundation**
+- [ ] **Read** [EDUCATIONAL_GUIDE_BASICS.md](./EDUCATIONAL_GUIDE_BASICS.md) completely
+- [ ] **Read** [EDUCATIONAL_GUIDE_ADVANCED.md](./EDUCATIONAL_GUIDE_ADVANCED.md) completely
+
+**Hands-On Practice**  
+- [ ] **Completed** [Lab 1: Fundamentals](./docs/LAB1_FUNDAMENTALS.md)
+- [ ] **Completed** [Lab 2: Core Modules](./docs/LAB2_CORE_MODULES.md)
+- [ ] **Executed** `npm start lab1` successfully
+- [ ] **Executed** `node labs/lab1.js` and `node labs/fundamentals.js`
+- [ ] **Tested** file system operations from Lab 2
+
+**Integration & Application**
 - [ ] **Tested** all verification commands above
 - [ ] **Built** something new with the concepts learned
+- [ ] **Connected** theory with practical lab exercises
 - [ ] **Ready** for professional JavaScript/Node.js development
+
+### Resource Integration Map
+
+```
+Theory (Read) → Practice (Lab) → Implementation (Run)
+     ↓              ↓                    ↓
+BASICS.md → LAB1_FUNDAMENTALS.md → labs/lab1.js
+     ↓              ↓                    ↓  
+ADVANCED.md → LAB2_CORE_MODULES.md → labs/lab2.js
+     ↓              ↓                    ↓
+Application → Real CLI Project → Full Features
+```
 
 ### What's Next?
 

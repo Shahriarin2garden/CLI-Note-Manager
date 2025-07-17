@@ -1,26 +1,7 @@
 # NoteCLI - AI-Powered Note Manager
 
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D%2018.0.0-brightgreen)](https://nodejs.org/)
-[![License: MIT## Learning & Education
-
-This project includes a **complete JavaScript & Node.js learning curriculum** designed for hands-on mastery.
-
-### **[▶ Start Learning Here →](./EDUCATIONAL_GUIDE.md)**
-
-**Quick Educational Commands:**
-```bash
-npm start learn    # Complete JavaScript & Node.js course
-npm start lab1     # Hands-on exercises (closures, higher-order functions)
-npm start help     # All educational commands
-```
-
-**What You'll Master:**
-- [✓] JavaScript fundamentals (functions, scope, closures, arrays)
-- [✓] Node.js runtime and architecture 
-- [✓] Professional CLI development patterns
-- [✓] Real-world application building
-
-> **▶ Complete Learning Path**: [Educational Guide](./EDUCATIONAL_GUIDE.md) → [Basics](./EDUCATIONAL_GUIDE_BASICS.md) → [Advanced](./EDUCATIONAL_GUIDE_ADVANCED.md) → [Verification](./EDUCATIONAL_REQUIREMENTS.md)s.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![ES Modules](https://img.shields.io/badge/ES-Modules-blue)](https://nodejs.org/api/esm.html)
 
 A professional note management CLI application featuring AI-powered analysis, interactive terminal UI, and comprehensive data management capabilities. Built with modern Node.js and JavaScript, this application demonstrates enterprise-grade features including encryption, analytics, multi-format export, and RESTful API integration.
@@ -177,26 +158,27 @@ ai-note-manager/
 └── package.json    # Dependencies & scripts
 ```
 
-## 📚 Learning & Education
+## Learning & Education
 
 This project includes a **complete JavaScript & Node.js learning curriculum** designed for hands-on mastery.
 
-### **[🎓 Start Learning Here →](./EDUCATIONAL_GUIDE.md)**
+### **[▶ Start Learning Here →](./EDUCATIONAL_GUIDE.md)**
 
 **Quick Educational Commands:**
 ```bash
 npm start learn    # Complete JavaScript & Node.js course
 npm start lab1     # Hands-on exercises (closures, higher-order functions)
+npm start lab2     # Core modules and file system operations
 npm start help     # All educational commands
 ```
 
 **What You'll Master:**
-- ✅ JavaScript fundamentals (functions, scope, closures, arrays)
-- ✅ Node.js runtime and architecture 
-- ✅ Professional CLI development patterns
-- ✅ Real-world application building
+- [✓] JavaScript fundamentals (functions, scope, closures, arrays)
+- [✓] Node.js runtime and architecture 
+- [✓] Professional CLI development patterns
+- [✓] Real-world application building
 
-> **�️ Complete Learning Path**: [Educational Guide](./EDUCATIONAL_GUIDE.md) → [Basics](./EDUCATIONAL_GUIDE_BASICS.md) → [Advanced](./EDUCATIONAL_GUIDE_ADVANCED.md) → [Verification](./EDUCATIONAL_REQUIREMENTS.md)
+> **▶ Complete Learning Path**: [Educational Guide](./EDUCATIONAL_GUIDE.md) → [Lab 1: Fundamentals](./docs/LAB1_FUNDAMENTALS.md) → [Lab 2: Core Modules](./docs/LAB2_CORE_MODULES.md) → [Advanced Guide](./EDUCATIONAL_GUIDE_ADVANCED.md) → [Verification](./EDUCATIONAL_REQUIREMENTS.md)
 
 ## Technical Architecture
 
@@ -296,15 +278,12 @@ Enhance your learning by implementing:
 - Database backend (SQLite/PostgreSQL)
 - Mobile companion app
 
-## Resources
-
-- [Node.js Documentation](https://nodejs.org/docs/)
-- [JavaScript Closures - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
-- [Async/Await Guide](https://javascript.info/async-await)
 ## Resources & Documentation
 
 ### Educational Content
 - **[Complete Learning Guide](./EDUCATIONAL_GUIDE.md)** - Your JavaScript & Node.js curriculum
+- **[Lab 1: Fundamentals](./docs/LAB1_FUNDAMENTALS.md)** - Hands-on JavaScript practice
+- **[Lab 2: Core Modules](./docs/LAB2_CORE_MODULES.md)** - File system and Node.js modules
 - **[Basics Tutorial](./EDUCATIONAL_GUIDE_BASICS.md)** - Fundamentals with examples
 - **[Advanced Patterns](./EDUCATIONAL_GUIDE_ADVANCED.md)** - Professional development
 - **[Requirements Check](./EDUCATIONAL_REQUIREMENTS.md)** - Verify your learning

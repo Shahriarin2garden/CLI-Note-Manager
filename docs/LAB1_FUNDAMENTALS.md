@@ -1,5 +1,9 @@
 # Lab 1: JavaScript Fundamentals & Node.js Introduction
 
+**📍 Navigation**: [← Main Guide](../EDUCATIONAL_GUIDE.md) | [Basics Theory](../EDUCATIONAL_GUIDE_BASICS.md) | [Next: Lab 2 →](./LAB2_CORE_MODULES.md)
+
+**🎯 Lab Files**: `labs/fundamentals.js` | `labs/lab1.js`
+
 ## Learning Objectives
 
 ### Core JavaScript Refresher
@@ -15,10 +19,10 @@
 - **Framework Comparison**: Node.js vs other backend technologies
 
 ### Practical Tasks
-- ✅ Set up Node.js development environment
-- ✅ Write functions demonstrating closures and higher-order functions
-- ✅ Create first Node.js script with console.log and basic operations
-- ✅ Explore Node.js REPL
+- [✓] Set up Node.js development environment
+- [✓] Write functions demonstrating closures and higher-order functions
+- [✓] Create first Node.js script with console.log and basic operations
+- [✓] Explore Node.js REPL
 
 ## Quick Start
 
@@ -29,11 +33,16 @@ npm start lab1
 # Or run directly
 node labs/lab1.js
 
-# For step-by-step learning
-node examples/step1-functions.js
-node examples/step2-closures.js
-node examples/step3-node-basics.js
+# For interactive learning with theory
+node labs/fundamentals.js
+
+# For step-by-step practice exercises
+node examples/functions-demo.js
+node examples/closures-demo.js
+node examples/nodejs-basics.js
 ```
+
+**💡 Tip**: Start with the theory in [EDUCATIONAL_GUIDE_BASICS.md](../EDUCATIONAL_GUIDE_BASICS.md), then return here for hands-on practice!
 
 ## What You'll Learn
 

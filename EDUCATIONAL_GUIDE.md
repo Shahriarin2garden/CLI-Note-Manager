@@ -34,6 +34,7 @@ Welcome to your comprehensive JavaScript and Node.js learning journey! This guid
 npm start learn
 ```
 ▶ Read: [JavaScript & Node.js Basics](./EDUCATIONAL_GUIDE_BASICS.md)
+▶ Practice: [Lab 1: Fundamentals](./docs/LAB1_FUNDAMENTALS.md)
 
 ### 2. **Practice Fundamentals**
 ```bash
@@ -41,8 +42,17 @@ npm start learn
 npm start lab1
 ```
 ▶ Practice: Closures, higher-order functions, and scope
+▶ Lab File: `labs/lab1.js` | `labs/fundamentals.js`
 
-### 3. **Advanced Concepts**
+### 3. **Intermediate Development**
+```bash
+# Core modules and file system
+npm start lab2
+```
+▶ Read: [Core Modules Guide](./docs/LAB2_CORE_MODULES.md)
+▶ Practice: File system operations, path handling, configuration
+
+### 4. **Advanced Concepts**
 ```bash
 # Experience advanced features
 npm start tui          # Interactive terminal UI
@@ -123,14 +133,26 @@ node --version        # Verify Node.js installation
 
 ---
 
-## File Guide
+## File Guide & Lab Navigation
 
-| File | Purpose | When to Read |
-|------|---------|--------------|
-| **[EDUCATIONAL_GUIDE_BASICS.md](./EDUCATIONAL_GUIDE_BASICS.md)** | JavaScript & Node.js fundamentals | **Start here** |
-| **[EDUCATIONAL_GUIDE_ADVANCED.md](./EDUCATIONAL_GUIDE_ADVANCED.md)** | Professional development patterns | After basics |
-| **[EDUCATIONAL_REQUIREMENTS.md](./EDUCATIONAL_REQUIREMENTS.md)** | Requirements verification | Check progress |
-| **[README.md](./README.md)** | Project overview and features | Overview |
+| File | Purpose | Command | When to Use |
+|------|---------|---------|-------------|
+| **[EDUCATIONAL_GUIDE_BASICS.md](./EDUCATIONAL_GUIDE_BASICS.md)** | JavaScript & Node.js fundamentals | `npm start learn` | **Start here** |
+| **[LAB1_FUNDAMENTALS.md](./docs/LAB1_FUNDAMENTALS.md)** | Hands-on JavaScript practice | `npm start lab1` | After reading basics |
+| **[labs/fundamentals.js](./labs/fundamentals.js)** | Interactive fundamentals course | `node labs/fundamentals.js` | Theory + practice |
+| **[labs/lab1.js](./labs/lab1.js)** | Practical JavaScript exercises | `node labs/lab1.js` | Skill building |
+| **[LAB2_CORE_MODULES.md](./docs/LAB2_CORE_MODULES.md)** | Node.js core modules & file system | `npm start lab2` | After Lab 1 |
+| **[EDUCATIONAL_GUIDE_ADVANCED.md](./EDUCATIONAL_GUIDE_ADVANCED.md)** | Professional development patterns | Review only | After all labs |
+| **[EDUCATIONAL_REQUIREMENTS.md](./EDUCATIONAL_REQUIREMENTS.md)** | Requirements verification | `npm start help` | Check progress |
+| **[README.md](./README.md)** | Project overview and features | - | Overview |
+
+### **Recommended Learning Path**
+1. **Theory**: Read [EDUCATIONAL_GUIDE_BASICS.md](./EDUCATIONAL_GUIDE_BASICS.md)
+2. **Practice**: Complete [LAB1_FUNDAMENTALS.md](./docs/LAB1_FUNDAMENTALS.md) → Run `npm start lab1`
+3. **Interactive**: Run `node labs/fundamentals.js` and `node labs/lab1.js`
+4. **Next Level**: Complete [LAB2_CORE_MODULES.md](./docs/LAB2_CORE_MODULES.md) → Run `npm start lab2`
+5. **Advanced**: Review [EDUCATIONAL_GUIDE_ADVANCED.md](./EDUCATIONAL_GUIDE_ADVANCED.md)
+6. **Verification**: Check [EDUCATIONAL_REQUIREMENTS.md](./EDUCATIONAL_REQUIREMENTS.md)
 
 **Happy Learning!**
 
