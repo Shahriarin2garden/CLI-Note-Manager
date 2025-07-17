@@ -17,7 +17,7 @@ dotenv.config();
 // Simple startup banner
 function displayBanner() {
   console.clear();
-  console.log(chalk.cyan.bold('TELEMED NOTES v2.0'));
+  console.log(chalk.cyan.bold('NOTECLI v2.0'));
   console.log(chalk.gray('AI-Powered Note Manager\n'));
 }
 
@@ -36,7 +36,6 @@ function displayHelp() {
   console.log('  ' + chalk.green('quick') + ' <text>           - Quick note');
   console.log('  ' + chalk.green('daily') + '                 - Daily journal');
   console.log('  ' + chalk.green('analytics') + '             - View stats');
-  console.log('  ' + chalk.green('tui') + '                   - Interactive mode');
   
   console.log(chalk.yellow.bold('\nADVANCED:'));
   console.log('  ' + chalk.magenta('analyze') + ' <title>       - AI analysis');
@@ -164,15 +163,6 @@ async function executeCommand() {
         console.log(chalk.gray('• AI-powered recommendations'));
         break;
 
-      case 'tui':
-        console.log(chalk.blue.bold('\nInteractive TUI Mode'));
-        console.log(chalk.yellow('Coming soon! Features:'));
-        console.log(chalk.gray('• Beautiful terminal interface'));
-        console.log(chalk.gray('• Mouse and keyboard navigation'));
-        console.log(chalk.gray('• Real-time note editing'));
-        console.log(chalk.gray('• Visual analytics dashboard'));
-        break;
-
       case 'analyze':
         console.log(chalk.blue.bold('\nAI Analysis'));
         console.log(chalk.yellow('Coming soon! Will provide:'));
@@ -232,7 +222,7 @@ async function executeCommand() {
       case 'version':
       case '--version':
       case '-v':
-        console.log(chalk.cyan.bold('TeleMed Notes v2.0.0'));
+        console.log(chalk.cyan.bold('NoteCLI v2.0.0'));
         console.log(chalk.gray('Advanced AI-powered note management system'));
         console.log(chalk.gray(`Node.js: ${process.version}`));
         console.log(chalk.gray(`Platform: ${process.platform}`));
@@ -243,7 +233,7 @@ async function executeCommand() {
         console.log(chalk.yellow('Available commands:'));
         console.log(chalk.gray('• Basic: add, list, read, remove, search'));
         console.log(chalk.gray('• Quick: quick, daily'));
-        console.log(chalk.gray('• Advanced: analytics, tui, analyze, export, share, server'));
+        console.log(chalk.gray('• Advanced: analytics, analyze, export, share, server'));
         console.log(chalk.gray('• Education: learn, lab1'));
         console.log(chalk.gray('\nRun "npm start help" for detailed usage information'));
         process.exit(1);

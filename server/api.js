@@ -25,7 +25,7 @@ const upload = multer({
  * Start the API server
  */
 export async function startServer() {
-  console.log(chalk.blue.bold('\n🌐 Starting TeleMed Notes API Server...'));
+  console.log(chalk.blue.bold('\n🌐 Starting NoteCLI API Server...'));
   
   // Routes
   setupRoutes();
@@ -371,7 +371,7 @@ function setupRoutes() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TeleMed Notes API</title>
+    <title>NoteCLI API</title>
     <style>
         body { font-family: 'Segoe UI', sans-serif; margin: 40px; background: #f5f5f5; }
         .container { max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
@@ -386,8 +386,8 @@ function setupRoutes() {
 </head>
 <body>
     <div class="container">
-        <h1>TeleMed Notes API v2.0</h1>
-        <p>Welcome to the TeleMed Notes REST API server. This API provides access to your notes with AI-powered features.</p>
+        <h1>NoteCLI API v2.0</h1>
+        <p>Welcome to the NoteCLI REST API server. This API provides access to your notes with AI-powered features.</p>
         
         <h2>📋 Available Endpoints</h2>
         

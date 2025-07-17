@@ -1,4 +1,4 @@
-# AI-Powered CLI Note Manager
+# NoteCLI - AI-Powered Note Manager
 
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D%2018.0.0-brightgreen)](https://nodejs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

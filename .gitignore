@@ -48,6 +48,10 @@ Thumbs.db
 # Output of 'npm pack'
 *.tgz
 
+# Backup files
+*_BACKUP.*
+EDUCATIONAL_GUIDE_ADVANCED_BACKUP.md
+
 # Yarn Integrity file
 .yarn-integrity
 

@@ -1,0 +1,13 @@
+{
+  "title": "My Notes",
+  "notes": [
+    {
+      "id": 1,
+      "content": "Learn Node.js file system"
+    },
+    {
+      "id": 2,
+      "content": "Build a CLI application"
+    }
+  ]
+}

@@ -1,23 +1,35 @@
+import { AdvancedFileHandler } from '../utils/advancedFileHandler.js';
 import chalk from 'chalk';
-import { removeNoteByTitle } from '../utils/fileHandler.js';
 
-/**
- * Removes a note by title
- * @param {string} title - The title of the note to remove
- */
+const fileHandler = new AdvancedFileHandler();
+
 export async function removeNote(title) {
   try {
-    const wasRemoved = await removeNoteByTitle(title);
-    
-    if (wasRemoved) {
-      console.log(chalk.green(`✓ Note "${title}" removed successfully!`));
-    } else {
-      console.log(chalk.red(`Note "${title}" not found!`));
-      console.log(chalk.yellow('Use "npm start list" to see available notes.'));
+    if (!title) {
+      console.log(chalk.red('Error: Note title is required'));
+      return false;
     }
+
+    const notes = await fileHandler.readNotes(true);
+    const noteIndex = notes.findIndex(note => 
+      note.title.toLowerCase() === title.toLowerCase()
+    );
     
+    if (noteIndex === -1) {
+      console.log(chalk.yellow(`Note "${title}" not found`));
+      return false;
+    }
+
+    const removedNote = notes[noteIndex];
+    notes.splice(noteIndex, 1);
+    
+    await fileHandler.writeNotes(notes);
+    
+    console.log(chalk.green(`✓ Note "${removedNote.title}" removed successfully!`));
+    return true;
+
   } catch (error) {
-    console.error(chalk.red('Failed to remove note:'), error.message);
-    throw error;
+    console.log(chalk.red(`Error removing note: ${error.message}`));
+    return false;
   }
 }
