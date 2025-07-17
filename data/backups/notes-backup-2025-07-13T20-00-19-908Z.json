@@ -581,44 +581,5 @@
       "wordCount": 7,
       "readingTime": 1
     }
-  },
-  {
-    "id": 1752436819676,
-    "title": "Learning Progress",
-    "body": "Completed JavaScript fundamentals, ready for advanced topics",
-    "createdAt": "2025-07-13T20:00:19.676Z",
-    "updatedAt": "2025-07-13T20:00:19.678Z",
-    "tags": [
-      "positive",
-      "short"
-    ],
-    "category": "General",
-    "metadata": {
-      "sentiment": {
-        "score": 1,
-        "comparative": 0.14285714285714285,
-        "mood": "positive",
-        "positive": [
-          "advanced"
-        ],
-        "negative": [],
-        "tokens": 7
-      },
-      "topics": {
-        "people": [],
-        "places": [],
-        "organizations": [],
-        "topics": [],
-        "nouns": [
-          "JavaScript fundamentals,",
-          "advanced topics"
-        ],
-        "verbs": [
-          "Completed"
-        ]
-      },
-      "wordCount": 7,
-      "readingTime": 1
-    }
   }
 ]
