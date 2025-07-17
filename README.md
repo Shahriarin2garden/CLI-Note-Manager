@@ -1,7 +1,26 @@
 # NoteCLI - AI-Powered Note Manager
 
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D%2018.0.0-brightgreen)](https://nodejs.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT## Learning & Education
+
+This project includes a **complete JavaScript & Node.js learning curriculum** designed for hands-on mastery.
+
+### **[▶ Start Learning Here →](./EDUCATIONAL_GUIDE.md)**
+
+**Quick Educational Commands:**
+```bash
+npm start learn    # Complete JavaScript & Node.js course
+npm start lab1     # Hands-on exercises (closures, higher-order functions)
+npm start help     # All educational commands
+```
+
+**What You'll Master:**
+- [✓] JavaScript fundamentals (functions, scope, closures, arrays)
+- [✓] Node.js runtime and architecture 
+- [✓] Professional CLI development patterns
+- [✓] Real-world application building
+
+> **▶ Complete Learning Path**: [Educational Guide](./EDUCATIONAL_GUIDE.md) → [Basics](./EDUCATIONAL_GUIDE_BASICS.md) → [Advanced](./EDUCATIONAL_GUIDE_ADVANCED.md) → [Verification](./EDUCATIONAL_REQUIREMENTS.md)s.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![ES Modules](https://img.shields.io/badge/ES-Modules-blue)](https://nodejs.org/api/esm.html)
 
 A professional note management CLI application featuring AI-powered analysis, interactive terminal UI, and comprehensive data management capabilities. Built with modern Node.js and JavaScript, this application demonstrates enterprise-grade features including encryption, analytics, multi-format export, and RESTful API integration.
@@ -158,21 +177,26 @@ ai-note-manager/
 └── package.json    # Dependencies & scripts
 ```
 
-## Learning Path
+## 📚 Learning & Education
 
-### Lab 1: JavaScript Fundamentals
+This project includes a **complete JavaScript & Node.js learning curriculum** designed for hands-on mastery.
+
+### **[🎓 Start Learning Here →](./EDUCATIONAL_GUIDE.md)**
+
+**Quick Educational Commands:**
 ```bash
-npm run lab1
-
-# Demonstrates:
-# - Closures with command parsers
-# - Higher-order functions with logging
-# - Counter factories maintaining state
-# - Function composition pipelines
-# - Node.js environment exploration
+npm start learn    # Complete JavaScript & Node.js course
+npm start lab1     # Hands-on exercises (closures, higher-order functions)
+npm start help     # All educational commands
 ```
 
-> **📚 Complete Learning Guide**: See [`EDUCATIONAL_GUIDE.md`](./EDUCATIONAL_GUIDE.md) for comprehensive JavaScript & Node.js training curriculum with hands-on exercises, real-world examples, and practical assessments.
+**What You'll Master:**
+- ✅ JavaScript fundamentals (functions, scope, closures, arrays)
+- ✅ Node.js runtime and architecture 
+- ✅ Professional CLI development patterns
+- ✅ Real-world application building
+
+> **�️ Complete Learning Path**: [Educational Guide](./EDUCATIONAL_GUIDE.md) → [Basics](./EDUCATIONAL_GUIDE_BASICS.md) → [Advanced](./EDUCATIONAL_GUIDE_ADVANCED.md) → [Verification](./EDUCATIONAL_REQUIREMENTS.md)
 
 ## Technical Architecture
 
@@ -277,42 +301,15 @@ Enhance your learning by implementing:
 - [Node.js Documentation](https://nodejs.org/docs/)
 - [JavaScript Closures - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 - [Async/Await Guide](https://javascript.info/async-await)
-- [Command Line Apps with Node.js](https://nodejs.dev/learn/command-line-apps)
+## Resources & Documentation
 
-## 📚 Educational Resources & Learning Materials
+### Educational Content
+- **[Complete Learning Guide](./EDUCATIONAL_GUIDE.md)** - Your JavaScript & Node.js curriculum
+- **[Basics Tutorial](./EDUCATIONAL_GUIDE_BASICS.md)** - Fundamentals with examples
+- **[Advanced Patterns](./EDUCATIONAL_GUIDE_ADVANCED.md)** - Professional development
+- **[Requirements Check](./EDUCATIONAL_REQUIREMENTS.md)** - Verify your learning
 
-This project includes comprehensive educational content for mastering JavaScript and Node.js fundamentals through practical implementation.
-
-### **[📖 Complete Learning Guide](./EDUCATIONAL_GUIDE.md)**
-*Your comprehensive JavaScript & Node.js training curriculum*
-- **Beginner-friendly explanations** with real-world analogies
-- **Hands-on exercises** with step-by-step guidance
-- **Professional code examples** with actual outputs
-- **Deep dive concepts** covering execution context, closures, and async programming
-- **Node.js vs other frameworks** comparison and when to use each
-- **Progressive learning path** from basics to advanced patterns
-
-### **[✅ Educational Requirements Compliance](./EDUCATIONAL_REQUIREMENTS.md)**
-*Complete verification of all educational objectives*
-- **Topic coverage validation** for all required JavaScript concepts
-- **Learning outcomes verification** with practical demonstrations
-- **Access methods documentation** for all educational content
-- **Assessment criteria fulfillment** with working examples
-- **Project structure overview** showing where each concept is implemented
-
-### Quick Educational Access
-```bash
-# Complete JavaScript & Node.js fundamentals course
-npm start learn
-
-# Original closure and higher-order function exercises  
-npm start lab1
-
-# Help and educational command overview
-npm start help
-```
-
-### Additional Learning Resources
+### External Resources
 - [Node.js Documentation](https://nodejs.org/docs/)
 - [JavaScript Closures - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 - [Async/Await Guide](https://javascript.info/async-await)
