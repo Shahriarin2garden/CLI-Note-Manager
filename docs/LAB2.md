@@ -129,12 +129,6 @@ npm start lab2
 
 # Or run directly
 node labs/lab2.js
-
-# Test file operations
-node examples/file-operations.js
-
-# Test configuration management
-node examples/config-demo.js
 ```
 
 ## Core Concepts

@@ -620,44 +620,5 @@
       "wordCount": 7,
       "readingTime": 1
     }
-  },
-  {
-    "id": 1752845136065,
-    "title": "Meeting",
-    "body": "Project discussion my foot",
-    "createdAt": "2025-07-18T13:25:36.065Z",
-    "updatedAt": "2025-07-18T13:25:36.066Z",
-    "tags": [
-      "discussion",
-      "my foot",
-      "neutral",
-      "short"
-    ],
-    "category": "Work",
-    "metadata": {
-      "sentiment": {
-        "score": 0,
-        "comparative": 0,
-        "mood": "neutral",
-        "positive": [],
-        "negative": [],
-        "tokens": 4
-      },
-      "topics": {
-        "people": [],
-        "places": [],
-        "organizations": [],
-        "topics": [],
-        "nouns": [
-          "discussion",
-          "my foot"
-        ],
-        "verbs": [
-          "Project"
-        ]
-      },
-      "wordCount": 4,
-      "readingTime": 1
-    }
   }
 ]
