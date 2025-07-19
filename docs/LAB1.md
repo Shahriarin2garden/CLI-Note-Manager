@@ -1,6 +1,6 @@
 # Lab 1: JavaScript Fundamentals & Node.js Introduction
 
-**📍 Navigation**: [← Main Guide](../EDUCATIONAL_GUIDE.md) | [Basics Theory](../EDUCATIONAL_GUIDE_BASICS.md) | [Next: Lab 2 →](./LAB2_CORE_MODULES.md)
+**📍 Navigation**: [← Main Guide](../EDUCATIONAL_GUIDE.md) | [Basics Theory](../EDUCATIONAL_GUIDE_BASICS.md) | [Next: Lab 2 →](./LAB2.md)
 
 **🎯 Lab Files**: `labs/fundamentals.js` | `labs/lab1.js`
 
@@ -103,7 +103,19 @@ The core of Node.js's asynchronous capabilities:
 Node.js supports two module systems:
 - **CommonJS**: `require()` and `module.exports` (traditional)
 - **ES Modules**: `import` and `export` (modern standard)
-
+```
+┌─────────────────────────────────────┐
+│           Node.js Application       │
+├─────────────────────────────────────┤
+│           Node.js Bindings          │
+├─────────────────────────────────────┤
+│  V8 Engine  │       libuv           │
+│ (JavaScript │   (Event Loop &       │
+│  Execution) │   System Operations)  │
+├─────────────┴───────────────────────┤
+│        Operating System             │
+└─────────────────────────────────────┘
+```
 ## What You'll Learn
 
 ### 1. JavaScript Functions (3 Ways)
@@ -166,8 +178,9 @@ console.log(displayNote(processed[0]));
 3. **`displayNote`**: Arrow function with implicit return and template literal formatting
 4. **Object Creation**: Using object literal syntax with computed properties and method shorthand
 
-**📸 Screenshot Placeholder:** *function-types-output.png*
-![Functions Demo Output](./screenshots/function-types-output.png)
+function-types-output.png
+
+![alt text](image-6.png)
 
 **Expected Output:**
 ```

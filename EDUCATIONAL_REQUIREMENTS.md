@@ -2,7 +2,7 @@
 
 > **Navigation**: [← Main Guide](./EDUCATIONAL_GUIDE.md) | [← Basics](./EDUCATIONAL_GUIDE_BASICS.md) | [← Advanced](./EDUCATIONAL_GUIDE_ADVANCED.md)
 
-> **🎯 Learning Resources**: [Lab 1](./docs/LAB1_FUNDAMENTALS.md) | [Lab 2](./docs/LAB2_CORE_MODULES.md) | `labs/` folder
+> **🎯 Learning Resources**: [Lab 1](./docs/LAB1.md) | [Lab 2](./docs/LAB2.md) | `labs/` folder
 
 This document validates that the TeleMed Notes project fully meets all educational requirements for JavaScript and Node.js fundamentals.
 

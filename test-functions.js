@@ -1,6 +1,4 @@
-console.log('Function Types in CLI Development');
-
-// CLI command handler (function declaration)
+// Function Declaration (hoisted) - CLI command handler
 function handleAddCommand(title, content) {
   const note = createNote(title, content);
   return note;
@@ -15,7 +13,7 @@ function createNote(title, content) {
   };
 }
 
-// Data processor (function expression)
+// Function Expression (not hoisted) - Data processor
 const processNoteData = function(notes) {
   return notes.map(note => ({
     ...note,
@@ -23,7 +21,7 @@ const processNoteData = function(notes) {
   }));
 };
 
-// Quick formatter (arrow function)
+// Arrow Function (modern syntax) - Quick formatter
 const displayNote = (note) => `[${note.id}] ${note.title}`;
 
 // Test the functions

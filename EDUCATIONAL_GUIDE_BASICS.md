@@ -3,40 +3,174 @@
 
 > **Navigation**: [← Main Guide](./EDUCATIONAL_GUIDE.md) | [Next: Advanced →](./EDUCATIONAL_GUIDE_ADVANCED.md) | [Verify Learning →](./EDUCATIONAL_REQUIREMENTS.md)
 
-> **🎯 Hands-On Practice**: [Lab 1: Fundamentals](./docs/LAB1_FUNDAMENTALS.md) | Run `npm start lab1`
+> **🎯 Hands-On Practice**: [Lab 1: Fundamentals](./docs/LAB1.md) | Run `npm start lab1`
 
-This concise guide covers the core JavaScript and Node.js concepts you need to build professional CLI applications. Each topic includes theory, practical examples, and real output.
+This comprehensive guide provides the theoretical foundation and practical implementation of JavaScript and Node.js concepts essential for building professional CLI applications. Each concept is explained with theory, architecture insights, and working examples.
 
-**💡 Study Method**: Read this guide first, then complete [Lab 1](./docs/LAB1_FUNDAMENTALS.md) for hands-on practice with the concepts!
+**💡 Study Method**: Read the theory sections first to understand the concepts, then work through the practical examples and complete [Lab 1](./docs/LAB1_FUNDAMENTALS.md) for hands-on reinforcement.
+
+## Theoretical Foundation
+
+### JavaScript Runtime Environment & Execution Context
+
+JavaScript operates within a **runtime environment** that provides the context for code execution. Understanding this foundation is crucial for effective development:
+
+**Execution Context Components:**
+- **Global Execution Context**: Created when the program starts, contains global variables and functions
+- **Function Execution Context**: Created each time a function is invoked, with its own variable environment
+- **Call Stack**: LIFO structure that manages execution contexts, tracking function calls and returns
+- **Memory Heap**: Where objects and complex data structures are stored
+
+**Execution Process:**
+1. **Creation Phase**: Variables are hoisted, functions are stored, `this` binding is established
+2. **Execution Phase**: Code runs line by line, variables are assigned values
+3. **Cleanup Phase**: Context is removed from call stack when execution completes
+
+### Core JavaScript Language Concepts
+
+**Functions as First-Class Citizens:**
+JavaScript treats functions as values that can be assigned to variables, passed as arguments, and returned from other functions. This enables powerful patterns like callbacks, higher-order functions, and functional programming approaches.
+
+**Scope and Lexical Environment:**
+Scope determines variable accessibility and lifetime. JavaScript uses lexical scoping, where inner functions have access to variables in their outer scope at the time of definition, not execution.
+
+**Closures:**
+A closure occurs when an inner function retains access to variables from its outer function's scope even after the outer function has completed execution. This mechanism enables data privacy, function factories, and callback patterns.
+
+**Object-Oriented vs Functional Paradigms:**
+JavaScript supports both paradigms - prototype-based inheritance for objects and functional programming with immutable data transformations, higher-order functions, and composition.
+
+### Node.js Architecture & Runtime Model
+
+**What is Node.js:**
+Node.js is a JavaScript runtime built on Chrome's V8 engine that enables server-side JavaScript execution. It extends JavaScript beyond the browser, providing access to file systems, networks, and operating system APIs.
+
+**Core Architecture Components:**
+
+<!-- Node.js Architecture Diagram - Full Width Placeholder -->
+<div align="center" style="width: 100%; margin: 30px 0;">
+  <img src="./node.drawio (1).svg" alt="Node.js Architecture Diagram" width="100%" style="max-width: 1000px; min-width: 600px;">
+  <br>
+  <em>Interactive Node.js Architecture: V8 Engine, libuv Event Loop, Thread Pool, and System Integration</em>
+</div>
+
+```
+┌─────────────────────────────────────┐
+│           Node.js Application       │
+├─────────────────────────────────────┤
+│           Node.js Bindings          │
+├─────────────────────────────────────┤
+│  V8 Engine  │       libuv           │
+│ (JavaScript │   (Event Loop &       │
+│  Execution) │   System Operations)  │
+├─────────────┴───────────────────────┤
+│        Operating System             │
+└─────────────────────────────────────┘
+```
+
+**V8 JavaScript Engine:**
+- Compiles JavaScript to optimized machine code
+- Manages memory allocation and garbage collection
+- Provides JavaScript runtime environment
+
+**libuv Library:**
+- Implements the event loop and asynchronous I/O operations
+- Handles file system operations, networking, and threading
+- Provides cross-platform system abstraction
+
+### Event-Driven, Non-Blocking I/O Model
+
+**Traditional Threading Model:**
+Most server technologies use one thread per request, which can lead to resource exhaustion and blocking operations when handling concurrent requests.
+
+**Node.js Event Loop Model:**
+Node.js uses a single-threaded event loop with non-blocking I/O operations:
+
+1. **Event Loop**: Continuously checks for and processes events
+2. **Callback Queue**: Stores completed asynchronous operations
+3. **Thread Pool**: Handles CPU-intensive operations separately
+4. **Non-blocking Operations**: I/O operations don't halt program execution
+
+**Benefits:**
+- High concurrency with low memory footprint
+- Excellent performance for I/O-intensive applications
+- Simplified concurrency model without thread synchronization
+
+**Trade-offs:**
+- CPU-intensive operations can block the event loop
+- Single point of failure in the main thread
+- Callback complexity (mitigated by Promises/async-await)
+
+### Node.js vs Other Backend Frameworks
+
+**Node.js vs Traditional Server Technologies:**
+
+| Aspect | Node.js | Java/Spring | Python/Django | C#/.NET |
+|--------|---------|-------------|---------------|---------|
+| **Architecture** | Event-driven, single-threaded | Multi-threaded | Multi-threaded | Multi-threaded |
+| **Concurrency** | Event loop + callbacks | Thread pooling | Threading/async | Threading/async |
+| **Memory Usage** | Low (shared event loop) | High (thread overhead) | Moderate | Moderate |
+| **I/O Performance** | Excellent | Good | Good | Good |
+| **CPU Performance** | Limited (single thread) | Excellent | Good | Excellent |
+| **Development Speed** | Fast (JavaScript everywhere) | Moderate | Fast | Moderate |
+| **Ecosystem** | NPM (largest package registry) | Maven/Gradle | PyPI | NuGet |
+
+**When to Choose Node.js:**
+- Real-time applications (chat, gaming, collaboration)
+- API development and microservices
+- I/O-intensive applications
+- Rapid prototyping and development
+- Teams with JavaScript expertise
+
+**When to Avoid Node.js:**
+- CPU-intensive computational tasks
+- Applications requiring heavy mathematical processing
+- Systems needing maximum security isolation
+- Legacy system integration requirements
 
 ## Learning Objectives
 
 By the end of this guide, you'll understand:
+
+**Theoretical Foundations:**
+- [✓] JavaScript runtime environment and execution context
+- [✓] Event-driven programming and the event loop
+- [✓] Node.js architecture and core components
+- [✓] Non-blocking I/O model vs traditional threading
+- [✓] When to choose Node.js vs other backend technologies
+
+**Practical Implementation:**
 - [✓] JavaScript functions, scope, and closures
 - [✓] Object and array manipulation
 - [✓] Higher-order functions and callbacks
-- [✓] Node.js runtime architecture
-- [✓] Event-driven programming
-- [✓] Practical CLI development
+- [✓] Node.js development environment setup
+- [✓] Building command-line applications
 
 ## Topics Covered
 
-**Core JavaScript Refresher**
+**Theoretical Foundations**
+- JavaScript runtime environment and execution context
+- Event-driven, non-blocking I/O architecture
+- Node.js core components and architecture
+- Comparison with other backend frameworks
+
+**Core JavaScript Implementation**
 - Functions (declarations, expressions, arrow functions)
-- Scope and closures
-- Objects and arrays
-- Higher-order functions
+- Scope, closures, and lexical environment
+- Objects and arrays manipulation
+- Higher-order functions and functional programming
 
-**Node.js Runtime Environment**
-- JavaScript runtime architecture
-- Event-driven, non-blocking I/O model
-- Node.js vs other backend frameworks
-- Execution context and call stack
+**Node.js Development Environment**
+- Runtime setup and verification
+- REPL for experimentation and testing
+- Command-line application development
+- Asynchronous programming patterns
 
-**Practical Development**
-- Setting up Node.js development environment
-- Using Node.js REPL for experimentation
-- Building your first Node.js scripts
+**Practical CLI Development**
+- Project structure and dependency management
+- Building interactive command-line interfaces
+- File system operations and data persistence
+- Error handling and user experience design
 
 ## Prerequisites
 
@@ -725,12 +859,12 @@ You've learned the essential JavaScript and Node.js concepts:
 ## Next Steps
 
 ### **Hands-On Practice** (Recommended)
-- **[Lab 1: Fundamentals](./docs/LAB1_FUNDAMENTALS.md)** - Practice JavaScript concepts you just learned
+- **[Lab 1: Fundamentals](./docs/LAB1.md)** - Practice JavaScript concepts you just learned
 - Run `npm start lab1` or `node labs/lab1.js` for interactive exercises
 - Run `node labs/fundamentals.js` for comprehensive fundamentals course
 
 ### **Continue Learning**
-- **[Lab 2: Core Modules](./docs/LAB2_CORE_MODULES.md)** - File system and Node.js modules
+- **[Lab 2: Core Modules](./docs/LAB2.md)** - File system and Node.js modules
 - **[Advanced Guide](./EDUCATIONAL_GUIDE_ADVANCED.md)** - Professional patterns and AI integration
 - [✓] **[Verify Learning](./EDUCATIONAL_REQUIREMENTS.md)** - Check your progress
 - **[Back to Main Guide](./EDUCATIONAL_GUIDE.md)** - Overview and navigation

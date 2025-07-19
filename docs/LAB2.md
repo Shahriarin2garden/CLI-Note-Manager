@@ -1,357 +1,753 @@
-# Lab 2: Node.js Core Modules & File System Operations
+# Lab 2: Professional Node.js CLI Development
+*Hands-On Implementation Workshop*
 
-**📍 Navigation**: [← Main Guide](../EDUCATIONAL_GUIDE.md) | [← Lab 1](./LAB1_FUNDAMENTALS.md) | [Advanced Guide →](../EDUCATIONAL_GUIDE_ADVANCED.md)
+**📍 Navigation**: [← Main Guide](../EDUCATIONAL_GUIDE.md) | [← Lab 1](./LAB1.md) | [Advanced Theory →](../EDUCATIONAL_GUIDE_ADVANCED.md)
 
-**🎯 Lab Files**: `labs/lab2.js` (if available) | Related: `utils/fileHandler.js` | `utils/advancedFileHandler.js`
+**🎯 Duration**: 90 minutes | **Lab File**: `labs/lab2.js` | **Prerequisites**: JavaScript fundamentals
 
-## Learning Objectives
+## Workshop Overview
 
-### Node.js Project Structure
-- **package.json**: Project configuration and dependencies
-- **npm basics**: Installing packages and managing dependencies
-- **ES Modules**: Modern module system (import/export)
-- **Environment Setup**: Configuration and best practices
+Build a production-ready CLI Note Manager demonstrating all Node.js fundamentals: package.json configuration, built-in modules (fs, path, os, util), file operations, and environment management. Each exercise implements concepts from the Advanced Guide.
 
-### Core Modules
-- **fs (File System)**: Reading, writing, and managing files
-- **path**: Working with file paths across operating systems
-- **os**: Operating system information and utilities
-- **util**: Utility functions for development
+**Learning Outcomes**: By completion, you'll have created a fully functional CLI application using professional Node.js patterns.
 
-### File System Operations
-- **Reading Files**: Synchronous and asynchronous file reading
-- **Writing Files**: Creating and updating files
-- **Directory Operations**: Creating, listing, and managing directories
-- **JSON Handling**: Working with configuration files
+---
 
-### Environment & Configuration
-- **Environment Variables**: Using process.env and .env files
-- **Cross-Platform Paths**: Handling Windows/Mac/Linux differences
-- **Configuration Management**: Structured app configuration
+## Phase 1: Project Architecture Setup (15 min)
 
-## Practical Tasks
+### Exercise 1.1: Initialize Professional Project Structure
 
-### [✓] Task 1: Create a Node.js Project
+**Objective**: Create package.json with dependency management and ES module configuration.
+
 ```bash
-# Initialize new project
+# Create lab workspace
+mkdir lab2-cli-workshop
+cd lab2-cli-workshop
+
+# Initialize with professional settings
 npm init -y
-
-# Install dependencies
-npm install chalk dotenv
-
-# Set up ES modules
-# Add "type": "module" to package.json
 ```
 
-### [✓] Task 2: Build a File Manager CLI Tool
-```javascript
-// Basic file operations
-import fs from 'fs';
-import path from 'path';
+**Task**: Configure package.json for ES modules and CLI deployment:
 
-const fileManager = {
-    createFile: (filename, content) => {
-        fs.writeFileSync(filename, content);
-        console.log(`Created: ${filename}`);
-    },
-    
-    readFile: (filename) => {
-        const content = fs.readFileSync(filename, 'utf8');
-        console.log(`Content: ${content}`);
-        return content;
-    },
-    
-    listFiles: (directory = '.') => {
-        const files = fs.readdirSync(directory);
-        console.log('Files:', files);
-        return files;
-    }
-};
-```
-
-### [✓] Task 3: JSON Configuration Management
-```javascript
-// config.json
+```json
 {
-    "appName": "File Manager",
-    "version": "1.0.0",
-    "dataDirectory": "./data",
-    "logLevel": "info"
-}
-
-// config-manager.js
-import fs from 'fs';
-import path from 'path';
-
-export class ConfigManager {
-    constructor(configPath = './config.json') {
-        this.configPath = configPath;
-        this.config = this.loadConfig();
-    }
-    
-    loadConfig() {
-        try {
-            const data = fs.readFileSync(this.configPath, 'utf8');
-            return JSON.parse(data);
-        } catch (error) {
-            console.log('Config file not found, creating default...');
-            return this.createDefaultConfig();
-        }
-    }
-    
-    saveConfig() {
-        fs.writeFileSync(this.configPath, JSON.stringify(this.config, null, 2));
-    }
+  "name": "lab2-note-cli",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "bin": { "lab2-notes": "./index.js" },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "dotenv": "^16.0.3"
+  },
+  "engines": { "node": ">=14.0.0" }
 }
 ```
 
-### [✓] Task 4: Cross-Platform Path Handling
+**Install dependencies and verify setup**:
+```bash
+npm install
+echo "console.log('✓ Project initialized');" > index.js
+node index.js
+```
+
+**Expected Output**: `✓ Project initialized`
+
+---
+
+## Phase 2: Built-in Modules Integration (25 min)
+
+### Exercise 2.1: Basic Path and OS Operations
+
+**Objective**: Learn fs, path, os, and util modules with simple examples.
+
+**Create `step1-modules.js`**:
 ```javascript
+import fs from 'fs';
+import path from 'path';
+import os from 'os';
+import util from 'util';
+
+console.log('=== Step 1: Built-in Modules Demo ===\n');
+
+// OS Module - System Information
+console.log('💻 System Info:');
+console.log('Platform:', os.platform());
+console.log('Home Directory:', os.homedir());
+console.log('Free Memory:', Math.round(os.freemem() / 1024 / 1024), 'MB');
+console.log('CPU Count:', os.cpus().length);
+
+// Path Module - Cross-platform paths
+console.log('\n📁 Path Operations:');
+const dataDir = path.join(process.cwd(), 'data');
+const configFile = path.join(dataDir, 'config.json');
+console.log('Data Directory:', dataDir);
+console.log('Config File:', configFile);
+console.log('File Extension:', path.extname(configFile));
+
+// FS Module - Check if directory exists
+console.log('\n📂 File System:');
+if (fs.existsSync(dataDir)) {
+  console.log('✅ Data directory exists');
+} else {
+  console.log('❌ Data directory not found');
+  fs.mkdirSync(dataDir, { recursive: true });
+  console.log('✅ Created data directory');
+}
+
+// Util Module - Pretty print objects
+console.log('\n🔍 Util Demo:');
+const sampleData = { name: 'Lab2', version: '1.0', features: ['fs', 'path', 'os'] };
+console.log('Pretty Object:', util.inspect(sampleData, { colors: true }));
+```
+
+**Run it**:
+```bash
+node step1-modules.js
+```
+
+**Expected Output**:
+```
+=== Step 1: Built-in Modules Demo ===
+
+💻 System Info:
+Platform: win32
+Home Directory: C:\Users\username
+Free Memory: 8192 MB
+CPU Count: 8
+
+📁 Path Operations:
+Data Directory: E:\path\to\project\data
+Config File: E:\path\to\project\data\config.json
+File Extension: .json
+
+� File System:
+❌ Data directory not found
+✅ Created data directory
+
+🔍 Util Demo:
+Pretty Object: { name: 'Lab2', version: '1.0', features: [ 'fs', 'path', 'os' ] }
+```
+
+---
+
+## Phase 3: File System Operations (30 min)
+
+### Exercise 3.1: Basic File Operations
+
+**Objective**: Learn to read, write, and manage files safely.
+
+**Create `step2-files.js`**:
+```javascript
+import fs from 'fs';
+import path from 'path';
+
+console.log('=== Step 2: File Operations Demo ===\n');
+
+// Ensure data directory exists
+const dataDir = './data';
+if (!fs.existsSync(dataDir)) {
+  fs.mkdirSync(dataDir, { recursive: true });
+  console.log('✅ Created data directory');
+}
+
+// Write a simple text file
+const textFile = path.join(dataDir, 'sample.txt');
+const textContent = 'Hello from Lab 2!\nThis is a sample file.';
+fs.writeFileSync(textFile, textContent);
+console.log('✅ Created sample.txt');
+
+// Write a JSON config file
+const configFile = path.join(dataDir, 'config.json');
+const config = {
+  appName: 'Lab2 CLI',
+  version: '1.0.0',
+  created: new Date().toISOString()
+};
+fs.writeFileSync(configFile, JSON.stringify(config, null, 2));
+console.log('✅ Created config.json');
+
+// Read and display files
+console.log('\n📖 Reading Files:');
+const readText = fs.readFileSync(textFile, 'utf8');
+console.log('Text file content:', readText);
+
+const readConfig = JSON.parse(fs.readFileSync(configFile, 'utf8'));
+console.log('Config file:', readConfig);
+
+// List all files in data directory
+console.log('\n📂 Files in data directory:');
+const files = fs.readdirSync(dataDir);
+files.forEach(file => {
+  const filePath = path.join(dataDir, file);
+  const stats = fs.statSync(filePath);
+  console.log(`  ${file} (${stats.size} bytes, ${stats.mtime.toLocaleString()})`);
+});
+```
+
+**Run it**:
+```bash
+node step2-files.js
+```
+
+**Expected Output**:
+```
+=== Step 2: File Operations Demo ===
+
+✅ Created data directory
+✅ Created sample.txt
+✅ Created config.json
+
+📖 Reading Files:
+Text file content: Hello from Lab 2!
+This is a sample file.
+Config file: {
+  appName: 'Lab2 CLI',
+  version: '1.0.0',
+  created: '2024-07-18T10:30:00.000Z'
+}
+
+📂 Files in data directory:
+  config.json (78 bytes, 7/18/2024, 10:30:00 AM)
+  sample.txt (35 bytes, 7/18/2024, 10:30:00 AM)
+```
+
+### Exercise 3.2: Safe File Operations with Error Handling
+
+**Create `step3-safe-files.js`**:
+```javascript
+import fs from 'fs';
+import path from 'path';
+
+console.log('=== Step 3: Safe File Operations ===\n');
+
+// Safe file write function
+function safeWriteFile(filePath, data) {
+  try {
+    // Ensure directory exists
+    const dir = path.dirname(filePath);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+    
+    // Write file
+    fs.writeFileSync(filePath, data);
+    console.log(`✅ Wrote: ${filePath}`);
+    return true;
+  } catch (error) {
+    console.error(`❌ Write failed: ${error.message}`);
+    return false;
+  }
+}
+
+// Safe file read function
+function safeReadFile(filePath) {
+  try {
+    if (!fs.existsSync(filePath)) {
+      console.log(`⚠️ File not found: ${filePath}`);
+      return null;
+    }
+    
+    const data = fs.readFileSync(filePath, 'utf8');
+    console.log(`✅ Read: ${filePath}`);
+    return data;
+  } catch (error) {
+    console.error(`❌ Read failed: ${error.message}`);
+    return null;
+  }
+}
+
+// Test safe operations
+safeWriteFile('./data/notes.json', JSON.stringify([], null, 2));
+safeWriteFile('./data/backup/notes-backup.json', JSON.stringify([], null, 2));
+
+const notes = safeReadFile('./data/notes.json');
+if (notes) {
+  console.log('Notes content:', JSON.parse(notes));
+}
+
+// Try to read non-existent file
+safeReadFile('./data/nonexistent.txt');
+```
+
+**Run it**:
+```bash
+node step3-safe-files.js
+```
+
+**Expected Output**:
+```
+=== Step 3: Safe File Operations ===
+
+✅ Wrote: ./data/notes.json
+✅ Wrote: ./data/backup/notes-backup.json
+✅ Read: ./data/notes.json
+Notes content: []
+⚠️ File not found: ./data/nonexistent.txt
+```
+
+---
+
+## Phase 4: Environment Configuration (20 min)
+
+### Exercise 4.1: Working with Environment Variables
+
+**Create `.env` file**:
+```env
+NODE_ENV=development
+DEBUG=true
+APP_NAME=Lab2CLI
+MAX_NOTES=5
+```
+
+**Create `step4-environment.js`**:
+```javascript
+import dotenv from 'dotenv';
 import path from 'path';
 import os from 'os';
 
-// Safe path operations
-const dataDir = path.join(process.cwd(), 'data');
-const configFile = path.join(dataDir, 'config.json');
-const logFile = path.join(os.homedir(), 'app.log');
-
-// Platform-specific operations
-console.log('Platform:', os.platform());
-console.log('Home Directory:', os.homedir());
-console.log('Data Directory:', dataDir);
-```
-
-## Quick Start
-
-```bash
-# Run the complete Lab 2 course
-npm start lab2
-
-# Or run directly
-node labs/lab2.js
-```
-
-## Core Concepts
-
-### 1. File System Module (fs)
-```javascript
-import fs from 'fs';
-
-// Synchronous operations (blocking)
-const content = fs.readFileSync('file.txt', 'utf8');
-fs.writeFileSync('output.txt', 'Hello World');
-
-// Asynchronous operations (non-blocking)
-fs.readFile('file.txt', 'utf8', (err, data) => {
-    if (err) throw err;
-    console.log(data);
-});
-
-// Promise-based (modern approach)
-import { readFile, writeFile } from 'fs/promises';
-const data = await readFile('file.txt', 'utf8');
-await writeFile('output.txt', 'Hello World');
-```
-
-### 2. Path Module
-```javascript
-import path from 'path';
-
-// Cross-platform path operations
-const fullPath = path.join('/users', 'john', 'documents', 'file.txt');
-const fileName = path.basename(fullPath); // 'file.txt'
-const dirName = path.dirname(fullPath);   // '/users/john/documents'
-const extension = path.extname(fullPath); // '.txt'
-```
-
-### 3. Environment Variables
-```javascript
-// .env file
-NODE_ENV=development
-DATA_PATH=./data
-LOG_LEVEL=debug
-
-// Using in code
-import dotenv from 'dotenv';
+// Load environment variables
 dotenv.config();
 
-const environment = process.env.NODE_ENV || 'production';
-const dataPath = process.env.DATA_PATH || './default-data';
+console.log('=== Step 4: Environment Configuration ===\n');
+
+// Read environment variables
+console.log('🌍 Environment Variables:');
+console.log('NODE_ENV:', process.env.NODE_ENV || 'not set');
+console.log('DEBUG:', process.env.DEBUG || 'not set');
+console.log('APP_NAME:', process.env.APP_NAME || 'not set');
+console.log('MAX_NOTES:', process.env.MAX_NOTES || 'not set');
+
+// Simple config object
+const config = {
+  env: process.env.NODE_ENV || 'production',
+  debug: process.env.DEBUG === 'true',
+  appName: process.env.APP_NAME || 'Default App',
+  maxNotes: parseInt(process.env.MAX_NOTES || '100'),
+  dataPath: process.env.DATA_PATH || './data'
+};
+
+console.log('\n⚙️ Application Config:');
+console.log(config);
+
+// Platform-specific paths
+function getDataPath() {
+  if (config.env === 'development') {
+    return './data';
+  }
+  
+  const platform = os.platform();
+  const home = os.homedir();
+  
+  switch (platform) {
+    case 'win32':
+      return path.join(home, 'AppData', 'Roaming', config.appName);
+    case 'darwin':
+      return path.join(home, 'Library', 'Application Support', config.appName);
+    default:
+      return path.join(home, '.config', config.appName.toLowerCase());
+  }
+}
+
+console.log('\n📁 Data Paths:');
+console.log('Platform:', os.platform());
+console.log('Development path:', './data');
+console.log('Production path:', getDataPath());
+console.log('Selected path:', config.env === 'development' ? './data' : getDataPath());
 ```
 
-## Expected Output
-
-When you run `npm start lab2`, you should see:
-
-```
-Lab 2: Node.js Core Modules & File System Operations
-
-=== Project Setup ===
-[✓] package.json configured
-[✓] ES modules enabled
-[✓] Dependencies installed
-
-=== File System Operations ===
-Creating test files...
-[✓] Created: data/sample.txt
-[✓] Created: data/config.json
-Reading files...
-[INFO] sample.txt content: "This is a sample file for Lab 2"
-[INFO] config.json content: {"name": "File Manager", "version": "1.0.0"}
-
-=== Directory Operations ===
-[DIR] Current directory: /path/to/project
-[DIR] Files in data/: ["sample.txt", "config.json"]
-[DIR] Creating subdirectory: data/backups
-[✓] Directory created successfully
-
-=== Cross-Platform Path Handling ===
-[SYSTEM] Platform: win32
-[SYSTEM] Home directory: C:\Users\username
-[PATH] Data path: C:\path\to\project\data
-[PATH] Config path: C:\path\to\project\data\config.json
+**Run it**:
+```bash
+node step4-environment.js
 ```
 
-## Practical Examples
+**Expected Output**:
+```
+=== Step 4: Environment Configuration ===
 
-### File Manager CLI
+🌍 Environment Variables:
+NODE_ENV: development
+DEBUG: true
+APP_NAME: Lab2CLI
+MAX_NOTES: 5
+
+⚙️ Application Config:
+{
+  env: 'development',
+  debug: true,
+  appName: 'Lab2CLI',
+  maxNotes: 5,
+  dataPath: './data'
+}
+
+📁 Data Paths:
+Platform: win32
+Development path: ./data
+Production path: C:\Users\username\AppData\Roaming\Lab2CLI
+Selected path: ./data
+```
+
+---
+
+## Phase 5: Simple CLI Implementation
+
+### Exercise 5.1: Basic CLI Structure
+
+**Update `index.js`**:
 ```javascript
-// file-manager.js
-import fs from 'fs/promises';
+#!/usr/bin/env node
+import fs from 'fs';
 import path from 'path';
 import chalk from 'chalk';
-
-class FileManager {
-    constructor(baseDir = './data') {
-        this.baseDir = baseDir;
-        this.ensureDirectory();
-    }
-    
-    async ensureDirectory() {
-        try {
-            await fs.mkdir(this.baseDir, { recursive: true });
-        } catch (error) {
-            // Directory already exists
-        }
-    }
-    
-    async createFile(filename, content) {
-        const filePath = path.join(this.baseDir, filename);
-        await fs.writeFile(filePath, content);
-        console.log(chalk.green(`[✓] Created: ${filename}`));
-    }
-    
-    async readFile(filename) {
-        const filePath = path.join(this.baseDir, filename);
-        const content = await fs.readFile(filePath, 'utf8');
-        console.log(chalk.blue(`[INFO] ${filename}:`), content);
-        return content;
-    }
-    
-    async listFiles() {
-        const files = await fs.readdir(this.baseDir);
-        console.log(chalk.yellow('[FILES]'), files);
-        return files;
-    }
-    
-    async deleteFile(filename) {
-        const filePath = path.join(this.baseDir, filename);
-        await fs.unlink(filePath);
-        console.log(chalk.red(`[DELETED] ${filename}`));
-    }
-}
-
-// Usage
-const manager = new FileManager();
-await manager.createFile('notes.txt', 'My first note');
-await manager.listFiles();
-await manager.readFile('notes.txt');
-```
-
-### Environment Configuration
-```javascript
-// config.js
 import dotenv from 'dotenv';
-import path from 'path';
 
+// Load environment
 dotenv.config();
 
-export const config = {
-    app: {
-        name: process.env.APP_NAME || 'File Manager',
-        version: process.env.APP_VERSION || '1.0.0',
-        environment: process.env.NODE_ENV || 'development'
-    },
-    
-    paths: {
-        data: process.env.DATA_PATH || './data',
-        logs: process.env.LOG_PATH || './logs',
-        config: process.env.CONFIG_PATH || './config'
-    },
-    
-    features: {
-        enableLogging: process.env.ENABLE_LOGGING === 'true',
-        enableBackups: process.env.ENABLE_BACKUPS === 'true'
-    }
+console.log(chalk.blue('🚀 Lab 2: Simple Node.js CLI\n'));
+
+// Simple configuration
+const config = {
+  dataDir: './data',
+  notesFile: './data/notes.json',
+  maxNotes: parseInt(process.env.MAX_NOTES || '10')
 };
+
+// Ensure data directory exists
+if (!fs.existsSync(config.dataDir)) {
+  fs.mkdirSync(config.dataDir, { recursive: true });
+}
+
+// Helper functions
+function loadNotes() {
+  try {
+    if (!fs.existsSync(config.notesFile)) {
+      return [];
+    }
+    const data = fs.readFileSync(config.notesFile, 'utf8');
+    return JSON.parse(data);
+  } catch (error) {
+    console.error(chalk.red('Error loading notes:', error.message));
+    return [];
+  }
+}
+
+function saveNotes(notes) {
+  try {
+    fs.writeFileSync(config.notesFile, JSON.stringify(notes, null, 2));
+    return true;
+  } catch (error) {
+    console.error(chalk.red('Error saving notes:', error.message));
+    return false;
+  }
+}
+
+// CLI Commands
+function addNote(title) {
+  if (!title || title.trim() === '') {
+    console.error(chalk.red('❌ Please provide a note title'));
+    return;
+  }
+
+  const notes = loadNotes();
+  
+  if (notes.length >= config.maxNotes) {
+    console.error(chalk.red(`❌ Maximum ${config.maxNotes} notes allowed`));
+    return;
+  }
+
+  const newNote = {
+    id: Date.now(),
+    title: title.trim(),
+    created: new Date().toISOString()
+  };
+
+  notes.push(newNote);
+  
+  if (saveNotes(notes)) {
+    console.log(chalk.green('✅ Note added successfully!'));
+    console.log(chalk.blue(`   ID: ${newNote.id}`));
+    console.log(chalk.blue(`   Title: ${newNote.title}`));
+  }
+}
+
+function listNotes() {
+  const notes = loadNotes();
+  
+  if (notes.length === 0) {
+    console.log(chalk.yellow('📝 No notes found'));
+    return;
+  }
+
+  console.log(chalk.blue(`📚 Found ${notes.length} notes:\n`));
+  notes.forEach(note => {
+    console.log(chalk.green(`[${note.id}]`) + ` ${note.title}`);
+    console.log(chalk.gray(`   Created: ${new Date(note.created).toLocaleString()}\n`));
+  });
+}
+
+function removeNote(id) {
+  const noteId = parseInt(id);
+  if (!noteId) {
+    console.error(chalk.red('❌ Please provide a valid note ID'));
+    return;
+  }
+
+  const notes = loadNotes();
+  const initialLength = notes.length;
+  const filteredNotes = notes.filter(note => note.id !== noteId);
+
+  if (filteredNotes.length === initialLength) {
+    console.error(chalk.red(`❌ Note with ID ${noteId} not found`));
+    return;
+  }
+
+  if (saveNotes(filteredNotes)) {
+    console.log(chalk.green(`✅ Note ${noteId} removed successfully`));
+  }
+}
+
+function showHelp() {
+  console.log(chalk.blue('📖 Available Commands:\n'));
+  console.log(chalk.green('  add <title>     ') + '- Add a new note');
+  console.log(chalk.green('  list            ') + '- List all notes');
+  console.log(chalk.green('  remove <id>     ') + '- Remove a note by ID');
+  console.log(chalk.green('  help            ') + '- Show this help');
+  
+  console.log(chalk.yellow('\n� Examples:'));
+  console.log('  node index.js add "My first note"');
+  console.log('  node index.js list');
+  console.log('  node index.js remove 1642591234567');
+}
+
+// Parse command line arguments
+const args = process.argv.slice(2);
+const command = args[0];
+const params = args.slice(1);
+
+// Handle commands
+switch (command) {
+  case 'add':
+    addNote(params.join(' '));
+    break;
+  case 'list':
+    listNotes();
+    break;
+  case 'remove':
+    removeNote(params[0]);
+    break;
+  case 'help':
+  default:
+    showHelp();
+}
 ```
 
-## Key Concepts Explained
+### Exercise 5.2: Test the Complete CLI
 
-### Synchronous vs Asynchronous
-- **Synchronous**: Blocks execution until complete (not recommended for I/O)
-- **Asynchronous**: Non-blocking, allows other operations to continue
-- **Promises**: Modern way to handle async operations
+**Run these commands to test your CLI**:
 
-### Path Handling
-- Always use `path.join()` for cross-platform compatibility
-- Avoid hardcoded path separators (`/` or `\`)
-- Use `__dirname` and `__filename` equivalents in ES modules
+```bash
+# Show help
+node index.js
 
-### Environment Variables
-- Never hardcode sensitive information
-- Use `.env` files for development configuration
-- Environment variables override default values
+# Add some notes
+node index.js add "Learn Node.js modules"
+node index.js add "Build a CLI application"
+node index.js add "Master file operations"
+
+# List all notes
+node index.js list
+
+# Remove a note (use ID from list command)
+node index.js remove 1234567890
+
+# List again to see the change
+node index.js list
+```
+
+**Expected Output**:
+```
+🚀 Lab 2: Simple Node.js CLI
+
+📖 Available Commands:
+
+  add <title>     - Add a new note
+  list            - List all notes
+  remove <id>     - Remove a note by ID
+  help            - Show this help
+
+� Examples:
+  node index.js add "My first note"
+  node index.js list
+  node index.js remove 1642591234567
+
+> node index.js add "Learn Node.js modules"
+✅ Note added successfully!
+   ID: 1642591234567
+   Title: Learn Node.js modules
+
+> node index.js list
+📚 Found 3 notes:
+
+[1642591234567] Learn Node.js modules
+   Created: 1/19/2024, 10:30:00 AM
+
+[1642591234568] Build a CLI application
+   Created: 1/19/2024, 10:30:15 AM
+
+[1642591234569] Master file operations
+   Created: 1/19/2024, 10:30:30 AM
+
+> node index.js remove 1642591234567
+✅ Note 1642591234567 removed successfully
+```
+
+---
+
+## Workshop Completion & Testing
+
+### Final Integration Test
+
+**Run all the step files to see the complete progression**:
+
+```bash
+# Step 1: Built-in modules
+node step1-modules.js
+
+# Step 2: File operations
+node step2-files.js
+
+# Step 3: Safe file operations
+node step3-safe-files.js
+
+# Step 4: Environment configuration
+node step4-environment.js
+
+# Final CLI test
+node index.js add "Workshop Complete!"
+node index.js add "Node.js Mastery!"
+node index.js list
+```
+
+### Complete Workshop Output
+
+**When you run all steps, you'll see**:
+
+```
+=== Step 1: Built-in Modules Demo ===
+
+💻 System Info:
+Platform: win32
+Home Directory: C:\Users\username
+Free Memory: 8192 MB
+CPU Count: 8
+
+📁 Path Operations:
+Data Directory: E:\path\to\project\data
+Config File: E:\path\to\project\data\config.json
+File Extension: .json
+
+📂 File System:
+✅ Created data directory
+
+🔍 Util Demo:
+Pretty Object: { name: 'Lab2', version: '1.0', features: [ 'fs', 'path', 'os' ] }
+
+=== Step 2: File Operations Demo ===
+
+✅ Created sample.txt
+✅ Created config.json
+
+📖 Reading Files:
+Text file content: Hello from Lab 2!
+This is a sample file.
+Config file: {
+  appName: 'Lab2 CLI',
+  version: '1.0.0',
+  created: '2024-07-18T10:30:00.000Z'
+}
+
+📂 Files in data directory:
+  config.json (78 bytes, 7/18/2024, 10:30:00 AM)
+  sample.txt (35 bytes, 7/18/2024, 10:30:00 AM)
+
+=== Step 3: Safe File Operations ===
+
+✅ Wrote: ./data/notes.json
+✅ Wrote: ./data/backup/notes-backup.json
+✅ Read: ./data/notes.json
+Notes content: []
+⚠️ File not found: ./data/nonexistent.txt
+
+=== Step 4: Environment Configuration ===
+
+🌍 Environment Variables:
+NODE_ENV: development
+DEBUG: true
+APP_NAME: Lab2CLI
+MAX_NOTES: 5
+
+⚙️ Application Config:
+{
+  env: 'development',
+  debug: true,
+  appName: 'Lab2CLI',
+  maxNotes: 5,
+  dataPath: './data'
+}
+
+� Data Paths:
+Platform: win32
+Development path: ./data
+Production path: C:\Users\username\AppData\Roaming\Lab2CLI
+Selected path: ./data
+
+🚀 Lab 2: Simple Node.js CLI
+
+✅ Note added successfully!
+   ID: 1642591234567
+   Title: Workshop Complete!
+
+📚 Found 2 notes:
+
+[1642591234567] Workshop Complete!
+   Created: 1/19/2024, 10:30:00 AM
+
+[1642591234568] Node.js Mastery!
+   Created: 1/19/2024, 10:30:15 AM
+```
+
+---
+
+## Mastery Assessment
+
+**✅ Skills You've Learned**:
+- **Package.json Setup**: Created professional Node.js project configuration
+- **Built-in Modules**: Used fs, path, os, util for system operations
+- **File Operations**: Safe reading, writing, and JSON handling
+- **Environment Config**: Loaded settings from .env files and environment variables
+- **CLI Development**: Built a working command-line application with error handling
+
+**🎯 Files You Created**:
+1. `package.json` - Project configuration
+2. `.env` - Environment variables
+3. `step1-modules.js` - Built-in modules demo
+4. `step2-files.js` - File operations demo
+5. `step3-safe-files.js` - Error handling demo
+6. `step4-environment.js` - Environment config demo
+7. `index.js` - Complete CLI application
+
+**� Real-World Skills**: You now understand how to build Node.js applications that work across different platforms and environments.
 
 ## Next Steps
-
-After completing Lab 2, you'll be ready for:
-- **[Advanced Guide](../EDUCATIONAL_GUIDE_ADVANCED.md)**: Async patterns, CLI development, AI integration
+- **[Advanced Theory](../EDUCATIONAL_GUIDE_ADVANCED.md)** - Understand the concepts behind your code
 - **Lab 3**: Asynchronous Programming & Promises
-- **Lab 4**: Building CLI Applications
-- **Lab 5**: Error Handling & Debugging
+- **Lab 4**: Testing & Deployment
 
-**Continue Your Journey**:
-1. Review [Advanced Concepts](../EDUCATIONAL_GUIDE_ADVANCED.md)
-2. Explore real implementations in `utils/fileHandler.js`
-3. Check your progress with [Educational Requirements](../EDUCATIONAL_REQUIREMENTS.md)
-
-## Practice Exercises
-
-1. **Create a Note Manager**: Build a simple CLI that creates, reads, and lists text files
-2. **Configuration System**: Implement a config manager with environment overrides
-3. **File Backup Tool**: Create a utility that backs up important files
-4. **Cross-Platform Installer**: Build a script that works on Windows, Mac, and Linux
-
-## Troubleshooting
-
-**Common Issues:**
-- Permission errors: Check file/directory permissions
-- Path not found: Verify file paths are correct
-- Module errors: Ensure ES modules are properly configured
-
-**Debug Tips:**
-```javascript
-// Check if file exists
-import fs from 'fs';
-if (fs.existsSync('myfile.txt')) {
-    console.log('File exists');
-}
-
-// Handle errors gracefully
-try {
-    const content = await fs.readFile('nonexistent.txt', 'utf8');
-} catch (error) {
-    console.error('Error reading file:', error.message);
-}
-```
+**� Congratulations!** You've successfully completed Lab 2 and built a functional CLI application using core Node.js concepts.
