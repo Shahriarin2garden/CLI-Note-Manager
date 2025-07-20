@@ -182,6 +182,12 @@ npm start help     # All educational commands
 
 ## Technical Architecture
 
+### System Overview
+
+![Architecture Diagram](./ss/archi.drawio%20(2).svg)
+
+*The complete system architecture showing the relationship between CLI commands, AI analysis engine, data management, and API server components.*
+
 ### Technologies Used
 - **Core**: Node.js 18+, ES Modules
 - **AI**: OpenAI API, Sentiment analysis, Natural language processing
