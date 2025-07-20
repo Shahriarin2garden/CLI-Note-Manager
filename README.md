@@ -288,8 +288,8 @@ Enhance your learning by implementing:
 
 ### Educational Content
 - **[Complete Learning Guide](./EDUCATIONAL_GUIDE.md)** - Your JavaScript & Node.js curriculum
-- **[Lab 1: Fundamentals](./docs/LAB1_FUNDAMENTALS.md)** - Hands-on JavaScript practice
-- **[Lab 2: Core Modules](./docs/LAB2_CORE_MODULES.md)** - File system and Node.js modules
+- **[Lab 1: Fundamentals](./docs/LAB1.md)** - Hands-on JavaScript practice
+- **[Lab 2: Core Modules](./docs/LAB2.md)** - File system and Node.js modules
 - **[Basics Tutorial](./EDUCATIONAL_GUIDE_BASICS.md)** - Fundamentals with examples
 - **[Advanced Patterns](./EDUCATIONAL_GUIDE_ADVANCED.md)** - Professional development
 - **[Requirements Check](./EDUCATIONAL_REQUIREMENTS.md)** - Verify your learning

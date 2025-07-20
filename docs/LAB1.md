@@ -347,7 +347,7 @@ loggedAdd(15, 27); // Shows logging and returns 42
 5. **Performance Monitoring**: Measures execution time using `Date.now()`
 6. **Function Enhancement**: The returned function has all original functionality plus logging capabilities
 
-**📸 Screenshot Placeholder:** *higher-order-functions-output.png*
+*higher-order-functions-output.png*
 ![alt text](image-2.png)
 
 **Expected Output:**
@@ -456,7 +456,8 @@ await demonstrateFileOps();
 7. **Error Handling**: Try-catch block for handling file operation failures
 
 *nodejs-environment-output.png*
-![Node.js Environment Output](![alt text](image-3.png))
+
+![alt text](image-3.png)
 
 **Expected Output:**
 ```
