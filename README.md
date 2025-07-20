@@ -178,7 +178,7 @@ npm start help     # All educational commands
 - [✓] Professional CLI development patterns
 - [✓] Real-world application building
 
-> **▶ Complete Learning Path**: [Educational Guide](./EDUCATIONAL_GUIDE.md) → [Lab 1: Fundamentals](./docs/LAB1_FUNDAMENTALS.md) → [Lab 2: Core Modules](./docs/LAB2_CORE_MODULES.md) → [Advanced Guide](./EDUCATIONAL_GUIDE_ADVANCED.md) → [Verification](./EDUCATIONAL_REQUIREMENTS.md)
+> **▶ Complete Learning Path**: [Educational Guide](./EDUCATIONAL_GUIDE.md) → [Lab 1: Fundamentals](./docs/LAB1.md) → [Lab 2: Core Modules](./docs/LAB2.md) → [Advanced Guide](./EDUCATIONAL_GUIDE_ADVANCED.md) → [Verification](./EDUCATIONAL_REQUIREMENTS.md)
 
 ## Technical Architecture
 
