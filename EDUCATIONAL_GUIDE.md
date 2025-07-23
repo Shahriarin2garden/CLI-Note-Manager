@@ -138,7 +138,7 @@ node --version        # Verify Node.js installation
 | File | Purpose | Command | When to Use |
 |------|---------|---------|-------------|
 | **[EDUCATIONAL_GUIDE_BASICS.md](./EDUCATIONAL_GUIDE_BASICS.md)** | JavaScript & Node.js fundamentals | `npm start learn` | **Start here** |
-| **[LAB1_FUNDAMENTALS.md](./docs/LAB1_FUNDAMENTALS.md)** | Hands-on JavaScript practice | `npm start lab1` | After reading basics |
+| **[LAB1_FUNDAMENTALS.md](./docs/LAB1.md)** | Hands-on JavaScript practice | `npm start lab1` | After reading basics |
 | **[labs/fundamentals.js](./labs/fundamentals.js)** | Interactive fundamentals course | `node labs/fundamentals.js` | Theory + practice |
 | **[labs/lab1.js](./labs/lab1.js)** | Practical JavaScript exercises | `node labs/lab1.js` | Skill building |
 | **[LAB2_CORE_MODULES.md](./docs/LAB2.md)** | Node.js core modules & file system | `npm start lab2` | After Lab 1 |
