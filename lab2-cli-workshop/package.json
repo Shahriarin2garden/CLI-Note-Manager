@@ -1,12 +1,14 @@
 {
   "name": "lab2-cli-workshop",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
-  "keywords": [],
+  "keywords": ["cli", "file-manager", "node.js", "lab"],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "Lab 2 CLI Workshop - Node.js Core Modules & File System Operations"
 }

@@ -1,5 +1,23 @@
 {
-  "appName": "Lab2 CLI",
+  "appName": "File Manager CLI",
   "version": "1.0.0",
-  "created": "2025-07-18T17:51:48.261Z"
+  "settings": {
+    "maxFiles": 2000,
+    "autoBackup": true,
+    "backupInterval": "24h",
+    "logLevel": "debug",
+    "allowedTypes": [
+      ".txt",
+      ".json",
+      ".md",
+      ".log"
+    ]
+  },
+  "paths": {
+    "data": "./data",
+    "backups": "./data/backups",
+    "logs": "./logs"
+  },
+  "created": "2025-07-24T16:02:57.749Z",
+  "lastModified": "2025-07-24T16:02:57.787Z"
 }

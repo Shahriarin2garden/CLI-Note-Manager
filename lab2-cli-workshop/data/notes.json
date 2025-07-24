@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "id": 1753370429458,
+    "title": "File System Lab",
+    "content": "Learning Node.js file operations with practical examples",
+    "tags": [
+      "node.js",
+      "filesystem",
+      "tutorial"
+    ],
+    "created": "2025-07-24T15:20:29.458Z",
+    "modified": "2025-07-24T15:20:29.458Z"
+  },
+  {
+    "id": 1753370429470,
+    "title": "JSON Configuration",
+    "content": "Understanding how to read and write JSON configuration files",
+    "tags": [
+      "json",
+      "config",
+      "best-practices"
+    ],
+    "created": "2025-07-24T15:20:29.470Z",
+    "modified": "2025-07-24T15:20:29.470Z"
+  },
+  {
+    "id": 1753372977789,
+    "title": "File System Lab",
+    "content": "Learning Node.js file operations with practical examples",
+    "tags": [
+      "node.js",
+      "filesystem",
+      "tutorial"
+    ],
+    "created": "2025-07-24T16:02:57.789Z",
+    "modified": "2025-07-24T16:02:57.789Z"
+  },
+  {
+    "id": 1753372977798,
+    "title": "JSON Configuration",
+    "content": "Understanding how to read and write JSON configuration files",
+    "tags": [
+      "json",
+      "config",
+      "best-practices"
+    ],
+    "created": "2025-07-24T16:02:57.798Z",
+    "modified": "2025-07-24T16:02:57.798Z"
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "application": {
+    "name": "FileManagerCLI",
+    "version": "1.0.0",
+    "environment": "development",
+    "debug": true
+  },
+  "limits": {
+    "maxFileSize": 10485760,
+    "maxNotes": 1000
+  },
+  "backup": {
+    "enabled": true,
+    "intervalHours": 24
+  },
+  "paths": {
+    "data": "./data",
+    "backup": "./data/backups",
+    "logs": "./logs"
+  },
+  "security": {
+    "encryption": false,
+    "logLevel": "debug"
+  },
+  "platform": {
+    "os": "win32",
+    "arch": "x64",
+    "nodeVersion": "v22.13.1",
+    "appDataPath": "C:\\Users\\shahr\\AppData\\Roaming\\FileManagerCLI"
+  },
+  "generated": "2025-07-24T16:05:14.701Z"
+}
