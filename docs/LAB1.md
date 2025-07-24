@@ -4,7 +4,7 @@
 
 **🎯 Lab Files**: `labs/fundamentals.js` | `labs/lab1.js`
 
-> **📸 Note**: Screenshot placeholders have been added throughout this document. Replace these with actual screenshots of terminal outputs when running the code examples.
+
 
 ## Learning Objectives
 
@@ -480,7 +480,7 @@ Arguments: none
 
 When you run `npm start lab1`, you should see:
 
-**📸 Screenshot Placeholder:** *lab1-complete-output.png*
+*lab1-complete-output.png*
 ![Lab 1 Complete Output].![alt text](image-4.png)
 ![alt text](image-5.png)UU
 
@@ -565,7 +565,7 @@ Completed in 193ms
 
 ### Running `node examples/functions-demo.js`
 
-**📸 Screenshot Placeholder:** *functions-demo-terminal.png*
+ *functions-demo-terminal.png*
 ![Functions Demo Terminal](./screenshots/functions-demo-terminal.png)
 
 ```
@@ -575,8 +575,7 @@ Note "Test Note" created with ID: 1752821683658
 ```
 
 ### Running `node examples/closures-demo.js`
-
-**📸 Screenshot Placeholder:** *closures-demo-terminal.png*
+ *closures-demo-terminal.png*
 ![Closures Demo Terminal](./screenshots/closures-demo-terminal.png)
 
 ```
@@ -595,7 +594,7 @@ History: [
 
 ### Running `node examples/nodejs-basics.js`
 
-**📸 Screenshot Placeholder:** *nodejs-basics-terminal.png*
+*nodejs-basics-terminal.png*
 ![Node.js Basics Terminal](./screenshots/nodejs-basics-terminal.png)
 
 ```
