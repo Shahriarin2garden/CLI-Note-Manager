@@ -90,7 +90,6 @@ npm start share "Title" --qr       # Generate QR code
 npm start export zip               # Complete backup
 
 # Interactive
-npm start tui                      # Terminal UI
 npm start server                   # Web API server
 ```
 
@@ -154,7 +153,6 @@ ai-note-manager/
 ├── data/            # Storage
 │   └── notes.json   # Notes database
 ├── index.js         # Main CLI interface
-├── tui.js          # Terminal UI
 └── package.json    # Dependencies & scripts
 ```
 
